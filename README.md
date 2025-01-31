@@ -1,2 +1,2 @@
 # landing-page
-Landing page de la comunidad de DevCafé Salta
+Landing page de la comunidad de SaltaDev
