@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,9 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SaltaDev - Comunidad de Desarrolladores</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
+  {% include imports.html%}
   <style>
     body {
       background-color: #181818;
@@ -25,7 +25,7 @@
 <body class="font-sans">
   <!-- Header -->
   <header class="bg-[#222222] py-4 px-6 flex items-center shadow-md">
-    <img src="imgs/logo-text.png" alt="SaltaDev Logo" class="h-12 mr-auto"> <!-- Logo alineado a la izquierda -->
+    <img src="img/logo-text.png" alt="SaltaDev Logo" class="h-12 mr-auto"> <!-- Logo alineado a la izquierda -->
   </header>
 
   <!-- Hero Section -->
@@ -33,7 +33,7 @@
     <h1 class="text-4xl font-bold">Bienvenido a <span class="text-[#94403c]">SaltaDev</span></h1>
     <div class="mt-6">
       <!-- Espacio agregado para otro logo -->
-      <img src="imgs/logo.png" alt="Otro Logo" class="h-16 mx-auto">
+      <img src="img/logo.png" alt="Otro Logo" class="h-16 mx-auto">
     </div>
     <p class="text-gray-300 mt-4">Somos una comunidad de IT de la provincia de Salta, Argentina.</p>
     <a href="https://chat.whatsapp.com/Kxy7Kl87lWf0Ta1rhKdoE3" class="mt-6 inline-block bg-[#94403c] text-white px-6 py-3 rounded hover:bg-[#751d1a]">Únete ahora</a>

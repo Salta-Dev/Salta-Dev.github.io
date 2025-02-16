@@ -17,5 +17,5 @@ Si usas Windows, instala Ruby+DevKit primero desde [https://rubyinstaller.org/](
 Puedes ejecutar la task de visual studio code para ejecutarlo. sino tienes el comando
 
 ```sh
-bundle exec jekyll serve --livereload --config _config.yml,_config_dev.yml
+bundle exec jekyll serve --livereload --config _config.yml
 ```
