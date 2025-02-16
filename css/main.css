@@ -33,6 +33,7 @@ header p {
   font-size: 2vh;
   margin-top: 2vh;
   opacity: 0.7;
+  text-shadow: black 1vh 1vh 1vh;
 }
 
 header .headerButtons {
@@ -60,6 +61,42 @@ header .headerButton:hover {
 header a:hover {
   rotate: -1.5deg;
   translate: 0vh -1vh;
+}
+
+header .imageReference {
+  width: 55vw;
+  filter: brightness(0.7);
+  transform: translateX(35vw)translateY(3vh);
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+
+header .imageReferenceTwo {
+  width: 55vw;
+  filter: brightness(0.7);
+  transform: translateX(-10vw)translateY(-3vh);
+  z-index: 0;
+  transition-duration: 0.3s;
+}
+
+header .imageReference:hover {
+  transform: translateX(35vw)translateY(1vh);
+}
+
+header .imageReferenceTwo:hover {
+  transform: translateX(-10vw)translateY(-5vh);
+}
+
+header .headerButtons .buttonDecorator {
+  width: 0;
+  height: 0;
+}
+
+header .headerButtons .buttonDecorator img {
+  filter: invert();
+  opacity: 0.7;
+  height: 50vh;
+  transform: translateY(-16vh) translateX(-6vw);
 }
 
 
