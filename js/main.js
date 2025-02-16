@@ -8,9 +8,7 @@ function createParticle(x, y) {
 
   const particleWith = (Math.random() + 1) * 2
 
-  // particle.style.width = particleWith + "vh"
-  // particle.style.height = particleWith + "vh"
-  // particle.style.backgroundColor = Math.random() * 100 < 75 ? "rgb(148, 64, 60)" : "white"
+
 
   particle.style.fontSize = particleWith + "vh"
   particle.style.color = Math.random() * 100 < 75 ? "rgb(148, 64, 60)" : "white"
