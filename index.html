@@ -1,78 +1,356 @@
----
----
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SaltaDev - Comunidad de Desarrolladores</title>
-  {% include imports.html%}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <title>SaltaDev - Comunidad IT</title>
   <style>
-    body {
-      background-color: #181818;
-      color: #ffffff;
+    /* Estilo para la barra de desplazamiento horizontal */
+    .scrollbar-hide::-webkit-scrollbar {
+      height: 8px; /* Altura de la barra */
     }
-
-    .icon {
-      font-size: 1.5rem;
+    
+    .scrollbar-hide::-webkit-scrollbar-track {
+      background: transparent; /* Fondo de la pista de la barra */
     }
-
-    /* Ajuste del tamaño de los iconos */
+    
+    .scrollbar-hide::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4); /* Color de la barra de desplazamiento */
+      border-radius: 4px; /* Esquinas redondeadas */
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(255, 255, 255, 0.6); /* Hover sobre la barra de desplazamiento */
+    }
   </style>
 </head>
-
-<body class="font-sans">
-  <!-- Header -->
-  <header class="bg-[#222222] py-4 px-6 flex items-center shadow-md">
-    <img src="img/logo-text.png" alt="SaltaDev Logo" class="h-12 mr-auto"> <!-- Logo alineado a la izquierda -->
-  </header>
-
-  <!-- Hero Section -->
-  <section class="text-center py-20 px-6">
-    <h1 class="text-4xl font-bold">Bienvenido a <span class="text-[#94403c]">SaltaDev</span></h1>
-    <div class="mt-6">
-      <!-- Espacio agregado para otro logo -->
-      <img src="img/logo.png" alt="Otro Logo" class="h-16 mx-auto">
+<body class="bg-gradient-to-r from-[#181013] to-[#37282e] bg-blend-soft-light">
+  <nav class="bg-[#181010] fixed w-full z-10 top-0">
+    <div class="max-w-screen-xl flex justify-between items-center mx-auto p-4">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse"><img src="./imgs/logo.png" class="h-8" alt="SaltaDev Logo"> <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SaltaDev</span></a>
+      <div class="hidden md:flex items-center space-x-8 w-full justify-center">
+        <ul class="flex space-x-8">
+          <li>
+            <a href="#inicio" class="py-2 px-3 text-white">Inicio</a>
+          </li>
+          <li>
+            <a href="#eventos" class="py-2 px-3 text-white">Eventos</a>
+          </li>
+          <li>
+            <a href="#coworking" class="py-2 px-3 text-white">Coworking</a>
+          </li>
+          <li>
+            <a href="#comunidad" class="py-2 px-3 text-white">Comunidad</a>
+          </li>
+        </ul>
+      </div>
+      <div class="hidden md:flex items-center">
+        <a href="#unete" class="py-2 px-6 bg-[#94403c] text-white font-semibold rounded-lg hover:bg-[#94403ca0] transition duration-300">Únete</a>
+      </div><button class="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600" type="button" data-collapse-toggle="navbar-cta" aria-controls="navbar-cta" aria-expanded="false"><span class="sr-only">Abrir menú</span> <svg class="w-5 h-5" aria-hidden="true" fill="currentcolor" viewbox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M0 2.5A2.5 2.5 0 012.5 0h12A2.5 2.5 0 0117 2.5a2.5 2.5 0 01-2.5 2.5h-12A2.5 2.5 0 010 2.5zm0 4A2.5 2.5 0 012.5 4.5h12A2.5 2.5 0 0117 6.5a2.5 2.5 0 01-2.5 2.5h-12A2.5 2.5 0 010 6.5zm0 4A2.5 2.5 0="></path></svg></button>
     </div>
-    <p class="text-gray-300 mt-4">Somos una comunidad de IT de la provincia de Salta, Argentina.</p>
-    <a href="https://chat.whatsapp.com/Kxy7Kl87lWf0Ta1rhKdoE3" class="mt-6 inline-block bg-[#94403c] text-white px-6 py-3 rounded hover:bg-[#751d1a]">Únete ahora</a>
+    <div class="hidden md:hidden" id="navbar-cta">
+      <ul class="flex flex-col items-center space-y-6 py-4">
+        <li class="text-center">
+          <a href="#inicio" class="py-2 px-3 text-white">Inicio</a>
+        </li>
+        <li class="text-center">
+          <a href="#eventos" class="py-2 px-3 text-white">Eventos</a>
+        </li>
+        <li class="text-center">
+          <a href="#coworking" class="py-2 px-3 text-white">Coworking</a>
+        </li>
+        <li class="text-center">
+          <a href="#comunidad" class="py-2 px-3 text-white">Comunidad</a>
+        </li>
+        <li class="text-center">
+          <a href="#unete" class="py-2 px-6 bg-[#94403c] text-white font-semibold rounded-lg hover:bg-[#94403ca0] transition duration-300">Únete</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section id="inicio" class="min-h-screen flex items-center pt-20 w-full">
+    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+      <div class="font-light sm:text-lg text-gray-400">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Bienvenido a la comunidad IT de Salta</h2>
+        <p class="mb-4">Somos un espacio para desarrolladores, diseñadores y entusiastas de la tecnología en Salta. Unimos talento, compartimos conocimientos y creamos oportunidades para crecer juntos en el mundo IT.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-8"><img class="w-full rounded-lg" src="./imgs/people_1.jpg" alt="office content 1"> <img class="mt-4 w-full lg:mt-10 rounded-lg" src="./imgs/people_2.jpg" alt="office content 2"></div>
+    </div>
   </section>
-
-  <!-- Why Join Section -->
-  <section class="text-center py-16 px-6 bg-[#222222]">
-    <h2 class="text-3xl font-bold text-white">Lo que la comunidad puede ofrecerte:</h2>
-    <div class="grid md:grid-cols-3 gap-8 mt-8">
-      <div class="p-6 bg-[#333333] rounded shadow">
-        <i class="fa-solid fa-users text-[#94403c] icon"></i>
-        <h3 class="text-xl font-semibold mt-2">Networking</h3>
-        <p class="text-gray-400 mt-2">Conéctate con otros desarrolladores y amplía tu red profesional.</p>
+  <section id="eventos" class="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#37282e] to-[#181013] pt-20 py-16 px-4">
+    <div class="text-center mb-8">
+      <h2 class="text-4xl font-extrabold text-white">Eventos</h2>
+      <p class="text-gray-400">Aquí encontrarás nuestros próximos eventos tecnológicos en Salta.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-screen-xl">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="./imgs/evento_1.jpeg" alt="Evento 1" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#181010]">SaltaTech - Taller de diseño UX/UI para Fintech y Polkadot Meetup</h3>
+          <p class="text-gray-500 text-sm mb-4">27 de Febrero, 2025 - 19:00 a 20:30 hrs.</p>
+          <p class="text-gray-600 mb-6">Salta Capital - San Lorenzo 141</p><a href="#saber-mas" class="text-[#94403c] hover:underline">Saber más</a>
+        </div>
       </div>
-      <div class="p-6 bg-[#333333] rounded shadow">
-        <i class="fa-solid fa-book text-[#94403c] icon"></i>
-        <h3 class="text-xl font-semibold mt-2">Aprendizaje</h3>
-        <p class="text-gray-400 mt-2">Participa en talleres, coworkings, charlas y hackathons para mejorar tus habilidades.</p>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="./imgs/evento_2.png" alt="Evento 2" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#181010]">Cowork Day 2 - SaltaDev</h3>
+          <p class="text-gray-500 text-sm mb-4">15 de Noviembre, 2024 - 09:00 a 18:30 hrs.</p>
+          <p class="text-gray-600 mb-6">Coworking SLA - Av Sarmiento y Belgrano</p><a href="#saber-mas" class="text-[#94403c] hover:underline">Éste evento ya finalizó</a>
+        </div>
       </div>
-      <div class="p-6 bg-[#333333] rounded shadow">
-        <i class="fa-solid fa-briefcase text-[#94403c] icon"></i>
-        <h3 class="text-xl font-semibold mt-2">Oportunidades</h3>
-        <p class="text-gray-400 mt-2">Descubre ofertas laborales y colabora en proyectos open source.</p>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="./imgs/evento_3.png" alt="Evento 3" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#181010]">Cowork Day 1 - SaltaDev</h3>
+          <p class="text-gray-500 text-sm mb-4">18 de Octubre, 2024 - 09:00 a 18:00 hrs.</p>
+          <p class="text-gray-600 mb-6">Café Ginger - Galería Salta Shopping, Buenos Aires 88</p><a href="#saber-mas" class="text-[#94403c] hover:underline">Éste evento ya finalizó</a>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer id="contacto" class="bg-[#222222] py-8 text-center">
-    <h3 class="text-xl font-semibold">Nuestras redes</h3>
-    <div class="flex justify-center space-x-6 mt-4">
-      <a href="https://chat.whatsapp.com/Kxy7Kl87lWf0Ta1rhKdoE3" class="hover:text-[#94403c]"><i class="fa-brands fa-whatsapp icon"></i> WhatsApp</a>
-      <a href="https://www.linkedin.com/company/105152506/" class="hover:text-[#94403c]"><i class="fa-brands fa-linkedin icon"></i> LinkedIn</a>
-      <a href="https://github.com/salta-dev" class="hover:text-[#94403c]"><i class="fa-brands fa-github icon"></i> GitHub</a>
-      <a href="https://linktr.ee/saltadev" class="hover:text-[#94403c]"><i class="fa-solid fa-link icon"></i> Linktree</a>
-      <a href="https://discord.gg/cYseMwpvJh" class="hover:text-[#94403c]"><i class="fa-brands fa-discord icon"></i> Discord</a>
+  <section id="coworking" class="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#37282e] to-[#181013] pt-20 py-16 px-4">
+    <div class="text-center mb-8">
+      <h2 class="text-4xl font-extrabold text-white">Coworking</h2>
+      <p class="text-gray-400">Descubre espacios de trabajo colaborativo.</p>
     </div>
-    <p class="text-gray-400 mt-4">&copy; 2025 SaltaDev. Todos los derechos reservados.</p>
+    <div class="relative w-full max-w-screen-xl overflow-x-auto">
+      <div class="flex space-x-6 overflow-x-auto scrollbar-hide pb-4">
+        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="imgs/coworking_sla.png" alt="Coworking SLA" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#181010]">Coworking SLA</h3>
+            <p class="text-gray-500 text-sm mb-4">Dirección: Av Belgrano 1078, Salta</p>
+            <p class="text-gray-500 text-sm mb-4">Horario: lunes a lunes, 24 hrs.</p>
+            <ul class="text-gray-600 ml-6 mb-6 list-disc">
+              <li>Salas de reuniones</li>
+              <li>Salones de eventos</li>
+              <li>Domicilio virtual</li>
+              <li>Oficinas privadas</li>
+              <li>Sala de podcast y streaming</li>
+              <li>Puestos individuales</li>
+              <li>Servicio de depósito</li>
+              <li>Convenio con estacionamientos cercanos</li>
+            </ul>
+            <div class="flex space-x-4 mt-auto">
+              <a href="https://wa.me/03875203050" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+              </a>
+              <a href="https://www.coworkingsalta.com" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fas fa-globe mr-2"></i>Web
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="imgs/coworking_sla.png" alt="Coworking SLA" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#181010]">Coworking SLA</h3>
+            <p class="text-gray-500 text-sm mb-4">Dirección: Av 25 de Mayo 86</p>
+            <p class="text-gray-500 text-sm mb-4">Horario: lunes a lunes, 24 hrs.</p>
+            <ul class="text-gray-600 ml-6 mb-6 list-disc">
+              <li>Salas de reuniones</li>
+              <li>Salones de eventos</li>
+              <li>Domicilio virtual</li>
+              <li>Oficinas privadas</li>
+              <li>Sala de podcast y streaming</li>
+              <li>Puestos individuales</li>
+              <li>Servicio de depósito</li>
+              <li>Convenio con estacionamientos cercanos</li>
+            </ul>
+            <div class="flex space-x-4 mt-auto">
+              <a href="https://wa.me/03875203050" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+              </a>
+              <a href="https://www.coworkingsalta.com" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fas fa-globe mr-2"></i>Web
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+          <img src="imgs/coworking_sla.png" alt="Coworking SLA" class="w-full h-48 object-cover">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-[#181010]">Coworking SLA</h3>
+            <p class="text-gray-500 text-sm mb-4">Dirección: Pje. Arteaga 1157</p>
+            <p class="text-gray-500 text-sm mb-4">Horario: lunes a lunes, 24 hrs.</p>
+            <ul class="text-gray-600 ml-6 mb-6 list-disc flex-grow">
+              <li>Salas de reuniones</li>
+              <li>Salones de eventos</li>
+              <li>Domicilio virtual</li>
+              <li>Oficinas privadas</li>
+              <li>Sala de podcast y streaming</li>
+              <li>Puestos individuales</li>
+              <li>Servicio de depósito</li>
+              <li>Convenio con estacionamientos cercanos</li>
+            </ul>
+            <div class="flex space-x-4 mt-auto">
+              <a href="https://wa.me/03875203050" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+              </a>
+              <a href="https://www.coworkingsalta.com" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fas fa-globe mr-2"></i>Web
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+          <img src="imgs/cafe_atemporal.jpeg" alt="Café Atemporal" class="w-full h-48 object-cover">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-[#181010]">Café Atemporal</h3>
+            <p class="text-gray-500 text-sm mb-4">Dirección: Santiago del Estero 301</p>
+            <p class="text-gray-500 text-sm mb-4">Horario: Lunes a sábados de 8:00 a 22:00 hrs. - Domingos de 17 a 20 hrs.</p>
+            <ul class="text-gray-600 ml-6 mb-6 list-disc flex-grow">
+              <li>Puestos individuales</li>
+              <li>Cafetería de especialidad</li>
+            </ul>
+            <div class="flex space-x-4 mt-auto">
+              <a href="https://www.instagram.com/dosiscafeatemporal" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fab fa-instagram mr-2"></i>Instagram
+              </a>
+              <a href="https://drive.google.com/file/d/1_SFquE1069TKcF0q9rSIQFMGFZgflv4l/view?usp=sharing" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fas fa-book mr-2"></i>Carta
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="imgs/la_cantera.png" alt="La Cantera" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#181010]">La Cantera Workspace</h3>
+            <p class="text-gray-500 text-sm mb-4">Dirección: Dean Funes 1380</p>
+            <p class="text-gray-500 text-sm mb-4">Horario: lunes a viernes de 9:00 a 20:00 hrs.</p>
+            <ul class="text-gray-600 ml-6 mb-6 list-disc">
+              <li>1 día gratis de prueba (martes o jueves)</li>
+              <li>2x1 en membresías mensuales</li>
+              <li>15% OFF en membresías fraccionadas, tus horarios, tu lugar.</li>
+              <li>Oficinas privadas</li>
+              <li>Puestos individuales</li>
+            </ul>
+            <div class="flex space-x-4 mt-auto">
+              <a href="https://wa.me/3874636952" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+              </a>
+              <a href="http://www.lacanteraws.com/" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fas fa-globe mr-2"></i>Web
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="imgs/la_cantera.png" alt="La Cantera" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#181010]">La Cantera Workspace</h3>
+            <p class="text-gray-500 text-sm mb-4">Dirección: Balcarce 735</p>
+            <p class="text-gray-500 text-sm mb-4">Horario: lunes a viernes de 9:00 a 20:00 hrs.</p>
+            <ul class="text-gray-600 ml-6 mb-6 list-disc">
+              <li>1 día gratis de prueba (martes o jueves)</li>
+              <li>2x1 en membresías mensuales</li>
+              <li>15% OFF en membresías fraccionadas, tus horarios, tu lugar.</li>
+              <li>Oficinas privadas</li>
+              <li>Puestos individuales</li>
+            </ul>
+            <div class="flex space-x-4 mt-auto">
+              <a href="https://wa.me/3872287720" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+              </a>
+              <a href="http://www.lacanteraws.com/" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
+                <i class="fas fa-globe mr-2"></i>Web
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="comunidad" class="min-h-screen flex flex-col items-center pt-20 py-16 px-4 text-white">
+    <div class="mx-auto max-w-screen-xl text-center mb-16">
+      <h3 class="text-3xl font-semibold mb-4">Lo que hemos logrado juntos</h3>
+      <p class="text-white mb-8">Nuestra comunidad está en constante crecimiento. Aquí te mostramos algunas de las cosas que puedes encontrar</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="bg-[#94403c] p-6 rounded-lg shadow-lg flex flex-col items-center">
+          <i class="fas fa-users text-white text-4xl"></i>
+          <h4 class="text-2xl font-semibold text-white mt-4">+300</h4>
+          <p class="text-white mt-2">Miembros en la comunidad</p>
+        </div>
+        <div class="bg-[#94403c] p-6 rounded-lg shadow-lg flex flex-col items-center">
+          <i class="fas fa-briefcase text-white text-4xl"></i>
+          <h4 class="text-2xl font-semibold text-white mt-4">Empleo</h4>
+          <p class="text-white mt-2">Publicamos constantemente ofertas para cualquier seniority</p>
+        </div>
+        <div class="bg-[#94403c] p-6 rounded-lg shadow-lg flex flex-col items-center">
+          <i class="fas fa-chalkboard-teacher text-white text-4xl"></i>
+          <h4 class="text-2xl font-semibold text-white mt-4">Cursos</h4>
+          <p class="text-white mt-2">Compartimos información sobre cursos, talleres y más para que puedas seguir sumando conocimiento</p>
+        </div>
+        <div class="bg-[#94403c] p-6 rounded-lg shadow-lg flex flex-col items-center">
+          <i class="fas fa-calendar-alt text-white text-4xl"></i>
+          <h4 class="text-2xl font-semibold text-white mt-4">Eventos</h4>
+          <p class="text-white mt-2">Realizamos eventos y juntadas para que te puedas sumar y hacer networking</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-12">
+      <p class="text-white text-2xl mb-4">¿Listo para ser parte de este crecimiento? Conecta con otros profesionales, aprende y crece.</p>
+    </div>
+    <div class="mt-8 flex gap-6 flex-wrap justify-center">
+      <a href="https://chat.whatsapp.com/Kxy7Kl87lWf0Ta1rhKdoE3" target="_blank" class="bg-[#25D366] text-white py-3 px-6 rounded-full text-lg flex items-center mb-4">
+        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+      </a>
+      <a href="https://discord.com/invite/cYseMwpvJh" target="_blank" class="bg-[#7289DA] text-white py-3 px-6 rounded-full text-lg flex items-center mb-4">
+        <i class="fab fa-discord mr-2"></i> Discord
+      </a>
+      <a href="https://www.linkedin.com/company/105152506/" target="_blank" class="bg-[#0077B5] text-white py-3 px-6 rounded-full text-lg flex items-center mb-4">
+        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+      </a>
+      <a href="https://github.com/Salta-Dev/" target="_blank" class="bg-[#333] text-white py-3 px-6 rounded-full text-lg flex items-center mb-4">
+        <i class="fab fa-github mr-2"></i> GitHub
+      </a>
+    </div>
+  </section>
+  
+  
+  
+  <footer class="p-4 bg-[#181010] md:p-8 lg:p-10">
+    <div class="mx-auto max-w-screen-xl text-center">
+      <a href="#" class="flex justify-center items-center text-2xl font-semibold text-white"><img src="./imgs/logo2.png" class="h-8" alt="SaltaDev Logo"></a>
+      <p class="my-6 text-gray-400">Conectamos a la comunidad IT de Salta. Un espacio para aprender, compartir y crecer en tecnología.</p><span class="text-sm text-gray-400">© 2025 <a href="#" class="hover:underline">SaltaDev</a> - Todos los derechos reservados</span>
+    </div>
   </footer>
-</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Manejo del menú hamburguesa
+      const menuButton = document.querySelector('[data-collapse-toggle="navbar-cta"]');
+      const navbar = document.getElementById('navbar-cta');
 
+      menuButton.addEventListener('click', () => {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+        navbar.classList.toggle('hidden');
+      });
+
+      // Desplazamiento suave
+      const links = document.querySelectorAll("nav a");
+      links.forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+          window.scrollTo({
+            top: targetElement.offsetTop - 60,
+            behavior: "smooth"
+          });
+
+          // Cerrar el menú en dispositivos móviles al hacer clic en un enlace
+          if (navbar.classList.contains('hidden') === false) {
+            navbar.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script> 
+</body>
 </html>
