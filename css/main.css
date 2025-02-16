@@ -4,6 +4,10 @@ header,
   height: 100vh;
 }
 
+.row {
+  padding: 1vh 7vw;
+}
+
 header .col-6 {
   display: flex;
   justify-content: center;
@@ -12,4 +16,77 @@ header .col-6 {
 
 header {
   color: white;
+  overflow: hidden;
+}
+
+header span {
+  color: var(--primaryColor);
+  font-weight: bolder;
+}
+
+header h1,
+header h2 {
+  font-size: 7vh;
+}
+
+header p {
+  font-size: 2vh;
+  margin-top: 2vh;
+  opacity: 0.7;
+}
+
+header .headerButtons {
+  margin-top: 4vh;
+  display: flex;
+}
+
+header .headerButton {
+  color: white;
+  text-decoration: none;
+  border: 0.1vh solid var(--primaryColor);
+  padding: 1vh 1vw;
+  border-radius: 1vh;
+  margin-right: 1vw;
+  transition-duration: 0.3s;
+  display: block;
+  font-size: 1.9vh;
+
+}
+
+header .headerButton:hover {
+  background-color: var(--primaryColor);
+}
+
+header a:hover {
+  rotate: -1.5deg;
+  translate: 0vh -1vh;
+}
+
+
+
+@media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
+
+  header .col-6 {
+    width: 100%;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 5vh;
+  }
+
+  header p {
+    font-size: 2vh;
+  }
+
+
+  header .headerButtons {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  header .headerButton {
+    width: 100%;
+    margin: 0vh 2vw;
+  }
 }

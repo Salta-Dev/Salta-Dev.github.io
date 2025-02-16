@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           timeline.reverse()
         }
         rightSide.classList.toggle("openNav")
+        document.getElementsByTagName("nav")[0].classList.toggle("darkBG")
         condition = !condition
 
 
@@ -57,11 +58,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     }
 
+
   }
 
   function createParticle(x, y) {
-    const particle = document.createElement("div");
-    particle.classList.add("particle");
+    const particle = document.createElement("i");
+    particle.classList.add("particle", "fa-solid", "fa-splotch");
     document.body.appendChild(particle);
 
     particle.style.left = `${x}px`;
@@ -69,9 +71,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const particleWith = (Math.random() + 1) * 2
 
-    particle.style.width = particleWith + "vh"
-    particle.style.height = particleWith + "vh"
-    particle.style.backgroundColor = Math.random() * 100 < 75 ? "rgb(148, 64, 60)" : "white"
+    // particle.style.width = particleWith + "vh"
+    // particle.style.height = particleWith + "vh"
+    // particle.style.backgroundColor = Math.random() * 100 < 75 ? "rgb(148, 64, 60)" : "white"
+
+    particle.style.fontSize = particleWith + "vh"
+    particle.style.color = Math.random() * 100 < 75 ? "rgb(148, 64, 60)" : "white"
 
 
     gsap.to(particle, {

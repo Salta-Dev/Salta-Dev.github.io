@@ -10,6 +10,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
+  z-index: 50;
 }
 
 nav img {
@@ -22,6 +23,11 @@ nav a {
   font-size: 2vh;
   margin-right: 1vw;
   font-weight: 300;
+}
+
+nav a:hover {
+  rotate: -1.5deg;
+  translate: 0vh -1vh;
 }
 
 nav .rightSide a {
@@ -76,6 +82,10 @@ nav .rightSide a:hover {
 
 nav #navToggle i {
   font-size: 3vh;
+}
+
+.darkBG {
+  background-color: black;
 }
 
 
