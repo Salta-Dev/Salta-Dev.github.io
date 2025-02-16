@@ -13,8 +13,7 @@ nav {
 }
 
 nav img {
-  width: 7vh;
-  height: auto;
+  height: 5vh;
 }
 
 nav a {
@@ -34,4 +33,13 @@ nav .rightSide a {
 
   pointer-events: none;
   z-index: 10;
+}
+
+nav #navLogo {
+  height: 5vh;
+}
+
+
+nav #navLogo .inHover {
+  scale: 0;
 }
