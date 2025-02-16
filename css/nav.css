@@ -1,0 +1,37 @@
+nav {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 7vh;
+  padding: 2vh 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(49, 37, 23);
+}
+
+nav img {
+  width: 7vh;
+  height: auto;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2vh;
+  margin-right: 1vw;
+  font-weight: 400;
+}
+
+nav .rightSide a {
+  color: rgba(255, 255, 255, 0.842);
+}
+
+.particle {
+  position: absolute;
+
+  pointer-events: none;
+  z-index: 10;
+}

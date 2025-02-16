@@ -1,0 +1,15 @@
+:root {
+  --bgPrimary: rgb(4, 2, 12);
+  --primaryColor: rgb(148, 64, 60);
+}
+
+html {
+  background-color: var(--bgPrimary);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+}

@@ -1,0 +1,56 @@
+<nav>
+  <div class="leftSide">
+    <a href="/" class="d-block" id="navLogo">
+      <img src="/img/logo-text.webp" alt="">
+    </a>
+  </div>
+
+  <div class="rightSide">
+    <a href="/courses">Cursos</a>
+    <a href="/jobs">Oportunidades</a>
+    <a href="/community">Comunidad</a>
+    <a href="/places">Lugares</a>
+    <a href="/devs">Desarrolladores</a>
+  </div>
+
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+
+    const navLogo = document.getElementById("navLogo");
+
+    navLogo.addEventListener("mouseenter", (e) => {
+      for (let i = 0; i < 10; i++) {
+        createParticle(e.clientX, e.clientY);
+      }
+    });
+
+    function createParticle(x, y) {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      document.body.appendChild(particle);
+
+      particle.style.left = `${x}px`;
+      particle.style.top = `${y}px`;
+
+      const particleWith = (Math.random() + 1) * 1
+
+      particle.style.width = particleWith + "vh"
+      particle.style.height = particleWith + "vh"
+      particle.style.backgroundColor = Math.random() * 100 < 75 ? "rgb(148, 64, 60)" : "white"
+
+
+      // Animamos la partícula con GSAP
+      gsap.to(particle, {
+        duration: 2.5,
+        x: (Math.random() - 0.5) * 200, // Movimiento aleatorio
+        y: Math.abs((Math.random() - 0.5)) * 200,
+        scale: 0,
+        opacity: 0,
+        ease: "power2.out",
+        onComplete: () => particle.remove(),
+      });
+    }
+  });
+</script>
