@@ -3,8 +3,10 @@
   --primaryColor: rgb(148, 64, 60);
 }
 
-html {
+html,
+body {
   background-color: var(--bgPrimary);
+  overflow-x: hidden;
 }
 
 * {

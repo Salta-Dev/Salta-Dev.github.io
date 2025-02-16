@@ -9,6 +9,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: hidden;
 }
 
 nav img {
@@ -34,12 +35,14 @@ nav .rightSide a {
   z-index: 10;
 }
 
-nav #navLogo {
+nav #navLogo,
+nav #navToggle {
   height: 5vh;
 }
 
 
-nav #navLogo .inHover {
+nav #navLogo .inHover,
+nav #navToggle .inHover {
   scale: 0;
   animation-name: navLogoAnimation;
   animation-iteration-count: infinite;
@@ -66,6 +69,51 @@ nav .rightSide a {
 nav .rightSide a:hover {
   background-position: 100%;
 }
+
+#toggleContainer {
+  display: none;
+}
+
+nav #navToggle i {
+  font-size: 3vh;
+}
+
+
+@media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
+  nav .rightSide {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 50;
+    display: initial;
+    text-align: center;
+    align-items: center;
+    padding: 10vh;
+    transform: translateY(100vh);
+    opacity: 0;
+    transition-duration: 0.3s !important;
+    margin-top: 7vh;
+
+  }
+
+  nav .rightSide a {
+    margin: 2vh auto;
+  }
+
+  #toggleContainer {
+    display: block;
+  }
+
+  nav .openNav {
+    transform: translateX(0vw) !important;
+    opacity: 1;
+  }
+
+}
+
 
 @keyframes navLogoAnimation {
   0% {
