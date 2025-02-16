@@ -15,3 +15,22 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", serif;
 }
+
+#globalDecorator {
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.globalParticle {
+  width: 2vh;
+  height: 2vh;
+  background: linear-gradient(270deg, var(--primaryColor), transparent);
+  position: fixed;
+  pointer-events: none;
+  border-radius: 100%;
+}
