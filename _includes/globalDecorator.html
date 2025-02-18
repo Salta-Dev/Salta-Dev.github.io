@@ -6,6 +6,8 @@
   const globalDecorator = document.getElementById("globalDecorator");
 
   setInterval(() => {
+
+    if (document.hidden) return;
     const element = document.createElement("div")
     element.classList.add("globalParticle")
     element.id = Math.random() * 1000000
