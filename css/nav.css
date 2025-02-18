@@ -5,12 +5,13 @@ nav {
   left: 0;
   width: 100vw;
   min-height: 7vh;
-  padding: 2vh 2vw;
+  padding: 1.5vh 2vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
   z-index: 50;
+  transition-duration: 0.3s;
 }
 
 nav img {
@@ -84,10 +85,15 @@ nav #navToggle i {
   font-size: 3vh;
 }
 
-.darkBG {
-  background-color: black;
+
+
+.darkBGNav {
+  background-color: rgba(0, 0, 0, 0.671);
 }
 
+.darkBG {
+  background-color: black !important;
+}
 
 @media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
   nav .rightSide {
@@ -107,6 +113,10 @@ nav #navToggle i {
     transition-duration: 0.3s !important;
     margin-top: 7vh;
 
+  }
+
+  nav {
+    padding: 2.5vh 5vw;
   }
 
   nav .rightSide a {

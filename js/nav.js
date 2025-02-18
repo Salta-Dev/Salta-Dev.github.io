@@ -62,9 +62,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
 
-
-
   generateNavAnimation("navLogo", true)
   generateNavAnimation("navToggle")
 
 });
+
+document.addEventListener("scroll", (e) => {
+  if (window.scrollY > 10) {
+    document.getElementById("nav").classList.add("darkBGNav")
+  } else {
+    document.getElementById("nav").classList.remove("darkBGNav")
+
+  }
+})
