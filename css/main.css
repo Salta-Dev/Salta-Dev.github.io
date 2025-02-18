@@ -215,6 +215,8 @@ header .headerButtons .buttonDecorator img {
   text-decoration: dashed;
 }
 
+
+
 #aboutUs .socialIcons a svg {
   margin-right: 1vw;
   background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), rgba(255, 0, 0, 0.192));
@@ -300,5 +302,13 @@ header .headerButtons .buttonDecorator img {
 
   #aboutUs .featureCardContainer p {
     font-size: 1.5vh !important;
+  }
+
+  #aboutUs .col-3 {
+    width: 50%;
+  }
+
+  #aboutUs .socialIcons a svg {
+    margin-right: 5vw;
   }
 }

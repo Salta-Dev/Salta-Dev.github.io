@@ -26,8 +26,13 @@ footer .partnersSection .rightSide img {
 
 footer p {
   font-size: 1.6vh;
+  color: rgba(255, 255, 255, 0.267);
 }
 
+footer a {
+  color: var(--primaryColor);
+  text-decoration: none;
+}
 
 @media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
   footer {
