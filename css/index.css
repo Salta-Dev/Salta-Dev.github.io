@@ -34,3 +34,19 @@ body {
   pointer-events: none;
   border-radius: 100%;
 }
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #160000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primaryColor);
+}
