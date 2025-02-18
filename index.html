@@ -21,11 +21,11 @@
     <div class="row">
       <div class="col-6" style="position: relative; z-index: 10;">
         <div>
-          <h1>Bienvenido a la comunidad de <span>SaltaDev</span></h1>
+          <h1><b>Bienvenido</b> a la comunidad de <span>SaltaDev</span></h1>
           <p>Has encontrado la comunidad de programación más grande de Salta, donde podrás acceder a todo lo que necesitas en un solo lugar: desde cursos y oportunidades laborales hasta una red de profesionales dispuestos a ayudarte.</p>
           <div class="headerButtons">
-            <a href="" class="headerButton">¡Más Información!</a>
-            <a href="https://chat.whatsapp.com/Kxy7Kl87lWf0Ta1rhKdoE3" class="headerButton">¡Únete Ahora!</a>
+            <a href="#features" class="headerButton">¡Más Información!</a>
+            <a href="{{ site.whatsapp }}" class="headerButton">¡Únete Ahora!</a>
             <div class="buttonDecorator">
               <img src="/img/wpp.webp" alt="">
 
@@ -47,6 +47,83 @@
       </div>
     </div>
   </header>
+
+  <main>
+    <section id="features">
+      <h1>¡Revisa <b>nuestros</b> logros!</h1>
+      <p>Como comunidad, nos sentimos orgullosos de todos nuestros logros y de cada uno de nuestros miembros. Por eso, aquí te dejamos un listado de todo lo que hemos logrado juntos.</p>
+      <div class="row">
+        <div class="col-3">
+          <div class="featureCard">
+            <div class="featureCardContainer">
+              <div class="featureCardHeader">
+                <div class="iconContainer">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+                <a href="{{ site.whatsapp }}" class="headerButton">Únete ahora</a>
+              </div>
+
+              <h1>+300</h1>
+              <p>Más de 300 miembros activos en nuestra hermosa comunidad</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="featureCard">
+            <div class="featureCardContainer">
+              <div class="featureCardHeader">
+                <div class="iconContainer">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <a href="/jobs" class="headerButton">Ver ofertas</a>
+              </div>
+
+              <h1>Empleo</h1>
+              <p>Consigue el empleo que deseas y demuestra tu talento</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="featureCard">
+            <div class="featureCardContainer">
+              <div class="featureCardHeader">
+                <div class="iconContainer">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <a href="/courses" class="headerButton">Explorar catálogo</a>
+              </div>
+
+              <h1>Cursos</h1>
+              <p>Tenemos un extenso catálogo de cursos para ti</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="featureCard">
+            <div class="featureCardContainer">
+              <div class="featureCardHeader">
+                <div class="iconContainer">
+                  <i class="fa-solid fa-calendar"></i>
+                </div>
+                <a href="/events" class="headerButton">Ver eventos</a>
+              </div>
+
+              <h1>Eventos</h1>
+              <p>Realizamos eventos comunitarios de acceso público y gratuito</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
 
   {% include postimports.html %}
 

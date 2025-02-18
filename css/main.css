@@ -1,10 +1,10 @@
 header,
-.row,
-.col-6 {
+header .row,
+header .col-6 {
   height: 100vh;
 }
 
-.row {
+header .row {
   padding: 1vh 7vw;
 }
 
@@ -45,7 +45,7 @@ header .headerButtons {
   display: flex;
 }
 
-header .headerButton {
+.headerButton {
   color: white;
   text-decoration: none;
   border: 0.1vh solid var(--primaryColor);
@@ -58,7 +58,7 @@ header .headerButton {
 
 }
 
-header .headerButton:hover {
+.headerButton:hover {
   background-color: var(--primaryColor);
 }
 
@@ -107,6 +107,94 @@ header .headerButtons .buttonDecorator img {
 
 
 
+#features {
+  padding: 15vh 7vw;
+  color: white;
+  background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/img/featureBG.webp);
+  background-position: center center;
+  background-size: cover;
+}
+
+
+
+#features h1 {
+  font-size: 5vh;
+}
+
+#features p {
+  width: 50%;
+  margin-bottom: 8vh;
+  margin-top: 2vh;
+  opacity: 0.7;
+  font-size: 2vh;
+}
+
+#features .featureCard {
+  padding: 5vh 2vw;
+  border: 0.1vh solid var(--primaryColor);
+  border-radius: 1vh 0vh 1vh 0vh;
+  background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), black);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  transition-duration: 0.3s;
+
+}
+
+#features .featureCardContainer {
+  width: 100%;
+
+}
+
+
+
+#features .iconContainer {
+  width: fit-content;
+  font-size: 3vh;
+  background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), rgba(255, 0, 0, 0.192));
+  color: var(--primaryColor);
+  padding: 0.5vh 1vh;
+  border-radius: 1vh;
+}
+
+#features .iconContainer i {
+  opacity: 0.3;
+  transition-duration: 0.3s;
+}
+
+#features .featureCard h1 {
+  font-size: 3vh;
+}
+
+#features .featureCard p {
+  font-size: 2vh;
+  width: 100%;
+  margin: 0;
+}
+
+
+#features .featureCard:hover {
+  box-shadow: rgba(255, 0, 0, 0.192) 0px 0px 1vh;
+  transform: translateY(-2vh) rotate(-2deg);
+}
+
+#features .featureCard:hover .iconContainer i {
+  opacity: 1;
+}
+
+#features .featureCardHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 2vh;
+
+}
+
+#features .headerButton {
+  margin-left: 1vh;
+}
+
 @media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
 
   header .col-6 {
@@ -141,4 +229,26 @@ header .headerButtons .buttonDecorator img {
     rotate: 35deg;
   }
 
+  #features .col-3 {
+    width: 50%;
+    margin-bottom: 4vh;
+  }
+
+  #features {
+    text-align: center;
+  }
+
+  #features p {
+    width: 100%;
+  }
+
+  #features .featureCardHeader {
+    display: inline-block;
+  }
+
+  #features .iconContainer {
+    display: inline-block;
+    margin-bottom: 2vh;
+    font-size: 5vh;
+  }
 }

@@ -28,7 +28,7 @@ function createParticle(x, y) {
 [...document.querySelectorAll("a")].forEach(e => {
   e.addEventListener("mouseenter", (e) => {
     for (let i = 0; i < 5; i++) {
-      createParticle(e.clientX, e.clientY)
+      createParticle(e.clientX, e.clientY + window.scrollY)
 
     }
   })
