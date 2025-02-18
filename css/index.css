@@ -50,3 +50,8 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--primaryColor);
 }
+
+@font-face {
+  font-family: Railey;
+  src: url("/fonts/Railey.ttf");
+}

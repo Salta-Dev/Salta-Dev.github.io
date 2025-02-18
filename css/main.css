@@ -107,7 +107,7 @@ header .headerButtons .buttonDecorator img {
 
 
 
-#features {
+#aboutUs {
   padding: 15vh 7vw;
   color: white;
   background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/img/featureBG.webp);
@@ -115,13 +115,21 @@ header .headerButtons .buttonDecorator img {
   background-size: cover;
 }
 
+#aboutUs .row {
+  margin-bottom: 10vh;
+}
+
+#aboutUs h2 {
+  font-size: 2vh;
+  text-align: center;
+}
 
 
-#features h1 {
+#aboutUs h1 {
   font-size: 5vh;
 }
 
-#features p {
+#aboutUs p {
   width: 50%;
   margin-bottom: 8vh;
   margin-top: 2vh;
@@ -129,7 +137,7 @@ header .headerButtons .buttonDecorator img {
   font-size: 2vh;
 }
 
-#features .featureCard {
+#aboutUs .featureCard {
   padding: 5vh 2vw;
   border: 0.1vh solid var(--primaryColor);
   border-radius: 1vh 0vh 1vh 0vh;
@@ -138,17 +146,17 @@ header .headerButtons .buttonDecorator img {
   justify-content: left;
   align-items: center;
   transition-duration: 0.3s;
-
+  min-height: 35vh;
 }
 
-#features .featureCardContainer {
+#aboutUs .featureCardContainer {
   width: 100%;
 
 }
 
 
 
-#features .iconContainer {
+#aboutUs .iconContainer {
   width: fit-content;
   font-size: 3vh;
   background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), rgba(255, 0, 0, 0.192));
@@ -157,32 +165,32 @@ header .headerButtons .buttonDecorator img {
   border-radius: 1vh;
 }
 
-#features .iconContainer i {
+#aboutUs .iconContainer i {
   opacity: 0.3;
   transition-duration: 0.3s;
 }
 
-#features .featureCard h1 {
+#aboutUs .featureCard h1 {
   font-size: 3vh;
 }
 
-#features .featureCard p {
+#aboutUs .featureCard p {
   font-size: 2vh;
   width: 100%;
   margin: 0;
 }
 
 
-#features .featureCard:hover {
+#aboutUs .featureCard:hover {
   box-shadow: rgba(255, 0, 0, 0.192) 0px 0px 1vh;
   transform: translateY(-2vh) rotate(-2deg);
 }
 
-#features .featureCard:hover .iconContainer i {
+#aboutUs .featureCard:hover .iconContainer i {
   opacity: 1;
 }
 
-#features .featureCardHeader {
+#aboutUs .featureCardHeader {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -191,8 +199,39 @@ header .headerButtons .buttonDecorator img {
 
 }
 
-#features .headerButton {
+#aboutUs .headerButton {
   margin-left: 1vh;
+}
+
+#aboutUs .socialIcons a {
+  font-family: "Railey";
+  color: white;
+  text-decoration: none;
+  font-size: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+  text-decoration: dashed;
+}
+
+#aboutUs .socialIcons a svg {
+  margin-right: 1vw;
+  background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), rgba(255, 0, 0, 0.192));
+  border-radius: 100%;
+  padding: 2vh;
+  border: 0.1vh solid var(--primaryColor);
+  box-shadow: rgba(255, 0, 0, 0.192) 0px 0px 1vh;
+  transition-duration: 0.66s;
+}
+
+#aboutUs .socialIcons a:hover {
+  color: var(--primaryColor);
+}
+
+#aboutUs .socialIcons a:hover svg {
+  transform: rotateY(360deg) translateY(-3vh);
+
 }
 
 @media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
@@ -229,26 +268,35 @@ header .headerButtons .buttonDecorator img {
     rotate: 35deg;
   }
 
-  #features .col-3 {
+  #aboutUs .col-3 {
     width: 50%;
     margin-bottom: 4vh;
   }
 
-  #features {
+  #aboutUs {
     text-align: center;
   }
 
-  #features p {
+  #aboutUs p {
     width: 100%;
   }
 
-  #features .featureCardHeader {
+  #aboutUs .featureCardHeader {
     display: inline-block;
   }
 
-  #features .iconContainer {
+  #aboutUs .iconContainer {
     display: inline-block;
     margin-bottom: 2vh;
     font-size: 5vh;
+  }
+
+  #aboutUs .featureCard {
+    min-height: 40vh;
+    height: max-content;
+  }
+
+  #aboutUs .featureCardContainer p {
+    font-size: 1.5vh !important;
   }
 }
