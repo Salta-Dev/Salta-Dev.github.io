@@ -223,6 +223,8 @@ header .headerButtons .buttonDecorator img {
   border: 0.1vh solid var(--primaryColor);
   box-shadow: rgba(255, 0, 0, 0.192) 0px 0px 1vh;
   transition-duration: 0.66s;
+  width: 10vh;
+  height: auto;
 }
 
 #aboutUs .socialIcons a:hover {
