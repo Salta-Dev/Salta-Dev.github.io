@@ -1,359 +1,197 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-  <title>SaltaDev - Comunidad IT</title>
-  <style>
-    /* Estilo para la barra de desplazamiento horizontal */
-    .scrollbar-hide::-webkit-scrollbar {
-      height: 8px; /* Altura de la barra */
-    }
-    
-    .scrollbar-hide::-webkit-scrollbar-track {
-      background: transparent; /* Fondo de la pista de la barra */
-    }
-    
-    .scrollbar-hide::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.4); /* Color de la barra de desplazamiento */
-      border-radius: 4px; /* Esquinas redondeadas */
-    }
-    
-    .scrollbar-hide::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(255, 255, 255, 0.6); /* Hover sobre la barra de desplazamiento */
-    }
-  </style>
+  <title>SaltaDev - Comunidad de Desarrolladores</title>
+  {% include preimports.html %}
+  <link rel="stylesheet" href="/css/main.css">
 </head>
-<body class="bg-gradient-to-r from-[#181013] to-[#37282e] bg-blend-soft-light">
-  <nav class="bg-[#181010] fixed w-full z-10 top-0">
-    <div class="max-w-screen-xl flex justify-between items-center mx-auto p-4">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse"><img src="./imgs/logo.png" class="h-8" alt="SaltaDev Logo"> <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SaltaDev</span></a>
-      <div class="hidden md:flex items-center space-x-8 w-full justify-center">
-        <ul class="flex space-x-8">
-          <li>
-            <a href="#inicio" class="py-2 px-3 text-white">Inicio</a>
-          </li>
-          <li>
-            <a href="#eventos" class="py-2 px-3 text-white">Eventos</a>
-          </li>
-          <li>
-            <a href="#coworking" class="py-2 px-3 text-white">Coworking</a>
-          </li>
-          <li>
-            <a href="#comunidad" class="py-2 px-3 text-white">Comunidad</a>
-          </li>
-        </ul>
-      </div>
-      <div class="hidden md:flex items-center">
-        <a href="#comunidad" class="py-2 px-6 bg-[#94403c] text-white font-semibold rounded-lg hover:bg-[#94403ca0] transition duration-300">Únete</a>
-      </div><button class="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600" type="button" data-collapse-toggle="navbar-cta" aria-controls="navbar-cta" aria-expanded="false"><span class="sr-only">Abrir menú</span> <svg class="w-5 h-5" aria-hidden="true" fill="currentcolor" viewbox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" d="M0 2.5A2.5 2.5 0 012.5 0h12A2.5 2.5 0 0117 2.5a2.5 2.5 0 01-2.5 2.5h-12A2.5 2.5 0 010 2.5zm0 4A2.5 2.5 0 012.5 4.5h12A2.5 2.5 0 0117 6.5a2.5 2.5 0 01-2.5 2.5h-12A2.5 2.5 0 010 6.5zm0 4A2.5 2.5 0="></path></svg></button>
-    </div>
-    <div class="hidden md:hidden" id="navbar-cta">
-      <ul class="flex flex-col items-center space-y-6 py-4">
-        <li class="text-center">
-          <a href="#inicio" class="py-2 px-3 text-white">Inicio</a>
-        </li>
-        <li class="text-center">
-          <a href="#eventos" class="py-2 px-3 text-white">Eventos</a>
-        </li>
-        <li class="text-center">
-          <a href="#coworking" class="py-2 px-3 text-white">Coworking</a>
-        </li>
-        <li class="text-center">
-          <a href="#comunidad" class="py-2 px-3 text-white">Comunidad</a>
-        </li>
-        <li class="text-center">
-          <a href="#unete" class="py-2 px-6 bg-[#94403c] text-white font-semibold rounded-lg hover:bg-[#94403ca0] transition duration-300">Únete</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <section id="inicio" class="min-h-screen flex items-center pt-20 w-full">
-    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-      <div class="font-light sm:text-lg text-gray-400">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Bienvenido a la comunidad IT de Salta</h2>
-        <p class="mb-4">Somos un espacio para desarrolladores, diseñadores y entusiastas de la tecnología en Salta. Unimos talento, compartimos conocimientos y creamos oportunidades para crecer juntos en el mundo IT.</p>
-      </div>
-      <div class="grid grid-cols-2 gap-4 mt-8"><img class="w-full rounded-lg" src="./imgs/people_1.jpg" alt="office content 1"> <img class="mt-4 w-full lg:mt-10 rounded-lg" src="./imgs/people_2.jpg" alt="office content 2"></div>
-    </div>
-  </section>
-  <section id="eventos" class="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#37282e] to-[#181013] pt-20 py-16 px-4">
-    <div class="text-center mb-8">
-      <h2 class="text-4xl font-extrabold text-white">Eventos</h2>
-      <p class="text-gray-400">Aquí encontrarás nuestros próximos eventos tecnológicos en Salta.</p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-screen-xl">
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
-        <img src="./imgs/evento_1.jpeg" alt="Evento 1" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#181010]">SaltaTech - Taller de diseño UX/UI para Fintech y Polkadot Meetup</h3>
-          <p class="text-gray-500 text-sm mb-4">27 de Febrero, 2025 - 19:00 a 20:30 hrs.</p>
-          <p class="text-gray-600 mb-6">Salta Capital - San Lorenzo 141</p><a href="https://lu.ma/7p7n3i98" class="text-[#94403c] hover:underline">Saber más</a>
-        </div>
-      </div>
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
-        <img src="./imgs/evento_2.png" alt="Evento 2" class="w-full h-48 object-cover">
-        <div class="p-6 flex flex-col flex-grow">
-          <div class="flex-grow">
-            <h3 class="text-xl font-semibold text-[#181010]">Cowork Day 2 - SaltaDev</h3>
-            <p class="text-gray-500 text-sm mb-4">15 de Noviembre, 2024 - 09:00 a 18:30 hrs.</p>
-            <p class="text-gray-600">Coworking SLA - Av Sarmiento y Belgrano</p>
-          </div>
-          <a href="#" class="text-[#94403c] hover:underline mt-6">Éste evento ya finalizó</a>
-        </div>
-      </div>      
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
-        <img src="./imgs/evento_3.png" alt="Evento 3" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#181010]">Cowork Day 1 - SaltaDev</h3>
-          <p class="text-gray-500 text-sm mb-4">18 de Octubre, 2024 - 09:00 a 18:00 hrs.</p>
-          <p class="text-gray-600 mb-6">Café Ginger - Galería Salta Shopping, Buenos Aires 88</p><a href="#saber-mas" class="text-[#94403c] hover:underline">Éste evento ya finalizó</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="coworking" class="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#37282e] to-[#181013] pt-20 py-16 px-4">
-    <div class="text-center mb-8">
-      <h2 class="text-4xl font-extrabold text-white">Coworking</h2>
-      <p class="text-gray-400">Descubre espacios de trabajo colaborativo.</p>
-    </div>
-    <div class="relative w-full max-w-screen-xl overflow-x-auto">
-      <div class="flex space-x-6 overflow-x-auto scrollbar-hide pb-4">
-        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-          <img src="imgs/coworking_sla.png" alt="Coworking SLA" class="w-full h-48 object-cover">
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-semibold text-[#181010]">Coworking SLA</h3>
-            <p class="text-gray-500 text-sm mb-4">Dirección: Av Belgrano 1078</p>
-            <p class="text-gray-500 text-sm mb-4">Horario: lunes a lunes, 24 hrs.</p>
-            <ul class="text-gray-600 ml-6 mb-6 list-disc flex-grow">
-              <li>Salas de reuniones</li>
-              <li>Salones de eventos</li>
-              <li>Domicilio virtual</li>
-              <li>Oficinas privadas</li>
-              <li>Sala de podcast y streaming</li>
-              <li>Puestos individuales</li>
-              <li>Servicio de depósito</li>
-              <li>Convenio con estacionamientos cercanos</li>
-            </ul>
-            <div class="flex space-x-4 mt-auto">
-              <a href="https://wa.me/03875203050" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
-              </a>
-              <a href="https://www.coworkingsalta.com" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fas fa-globe mr-2"></i>Web
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-          <img src="imgs/coworking_sla.png" alt="Coworking SLA" class="w-full h-48 object-cover">
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-semibold text-[#181010]">Coworking SLA</h3>
-            <p class="text-gray-500 text-sm mb-4">Dirección: Av 25 de Mayo</p>
-            <p class="text-gray-500 text-sm mb-4">Horario: lunes a lunes, 24 hrs.</p>
-            <ul class="text-gray-600 ml-6 mb-6 list-disc flex-grow">
-              <li>Salas de reuniones</li>
-              <li>Salones de eventos</li>
-              <li>Domicilio virtual</li>
-              <li>Oficinas privadas</li>
-              <li>Sala de podcast y streaming</li>
-              <li>Puestos individuales</li>
-              <li>Servicio de depósito</li>
-              <li>Convenio con estacionamientos cercanos</li>
-            </ul>
-            <div class="flex space-x-4 mt-auto">
-              <a href="https://wa.me/03875203050" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
-              </a>
-              <a href="https://www.coworkingsalta.com" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fas fa-globe mr-2"></i>Web
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-          <img src="imgs/coworking_sla.png" alt="Coworking SLA" class="w-full h-48 object-cover">
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-semibold text-[#181010]">Coworking SLA</h3>
-            <p class="text-gray-500 text-sm mb-4">Dirección: Pje. Arteaga 1157</p>
-            <p class="text-gray-500 text-sm mb-4">Horario: lunes a lunes, 24 hrs.</p>
-            <ul class="text-gray-600 ml-6 mb-6 list-disc flex-grow">
-              <li>Salas de reuniones</li>
-              <li>Salones de eventos</li>
-              <li>Domicilio virtual</li>
-              <li>Oficinas privadas</li>
-              <li>Sala de podcast y streaming</li>
-              <li>Puestos individuales</li>
-              <li>Servicio de depósito</li>
-              <li>Convenio con estacionamientos cercanos</li>
-            </ul>
-            <div class="flex space-x-4 mt-auto">
-              <a href="https://wa.me/03875203050" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
-              </a>
-              <a href="https://www.coworkingsalta.com" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fas fa-globe mr-2"></i>Web
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-          <img src="imgs/cafe_atemporal.jpeg" alt="Café Atemporal" class="w-full h-48 object-cover">
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-semibold text-[#181010]">Café Atemporal</h3>
-            <p class="text-gray-500 text-sm mb-4">Dirección: Santiago del Estero 301</p>
-            <p class="text-gray-500 text-sm mb-4">Horario: Lunes a sábados de 8:00 a 22:00 hrs. - Domingos de 17 a 20 hrs.</p>
-            <ul class="text-gray-600 ml-6 mb-6 list-disc flex-grow">
-              <li>Puestos individuales</li>
-              <li>Cafetería de especialidad</li>
-            </ul>
-            <div class="flex space-x-4 mt-auto">
-              <a href="https://www.instagram.com/dosiscafeatemporal" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fab fa-instagram mr-2"></i>Instagram
-              </a>
-              <a href="https://drive.google.com/file/d/1_SFquE1069TKcF0q9rSIQFMGFZgflv4l/view?usp=sharing" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fas fa-book mr-2"></i>Carta
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden">
-          <img src="imgs/la_cantera.png" alt="La Cantera" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-[#181010]">La Cantera Workspace</h3>
-            <p class="text-gray-500 text-sm mb-4">Dirección: Dean Funes 1380</p>
-            <p class="text-gray-500 text-sm mb-4">Horario: lunes a viernes de 9:00 a 20:00 hrs.</p>
-            <ul class="text-gray-600 ml-6 mb-6 list-disc">
-              <li>1 día gratis de prueba (martes o jueves)</li>
-              <li>2x1 en membresías mensuales</li>
-              <li>15% OFF en membresías fraccionadas, tus horarios, tu lugar.</li>
-              <li>Oficinas privadas</li>
-              <li>Puestos individuales</li>
-            </ul>
-            <div class="flex space-x-4 mt-auto">
-              <a href="https://wa.me/3874636952" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
-              </a>
-              <a href="http://www.lacanteraws.com/" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fas fa-globe mr-2"></i>Web
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden">
-          <img src="imgs/la_cantera.png" alt="La Cantera" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-[#181010]">La Cantera Workspace</h3>
-            <p class="text-gray-500 text-sm mb-4">Dirección: Balcarce 735</p>
-            <p class="text-gray-500 text-sm mb-4">Horario: lunes a viernes de 9:00 a 20:00 hrs.</p>
-            <ul class="text-gray-600 ml-6 mb-6 list-disc">
-              <li>1 día gratis de prueba (martes o jueves)</li>
-              <li>2x1 en membresías mensuales</li>
-              <li>15% OFF en membresías fraccionadas, tus horarios, tu lugar.</li>
-              <li>Oficinas privadas</li>
-              <li>Puestos individuales</li>
-            </ul>
-            <div class="flex space-x-4 mt-auto">
-              <a href="https://wa.me/3872287720" class="text-white bg-[#94403c] hover:bg-[#943c3cef] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
-              </a>
-              <a href="http://www.lacanteraws.com/" class="text-white bg-[#94403c] hover:bg-[#94403ceb] rounded-full py-2 px-4 w-full text-center flex items-center justify-center">
-                <i class="fas fa-globe mr-2"></i>Web
-              </a>
+
+<body>
+
+  {% include nav.html %}
+
+  {% include globalDecorator.html %}
+
+  <header>
+    <div class="row">
+      <div class="col-6" style="position: relative; z-index: 10;">
+        <div>
+          <h1><b>Bienvenido</b> a la comunidad de <span>SaltaDev</span></h1>
+          <p>Has encontrado la comunidad de programación más grande de Salta, donde podrás acceder a todo lo que necesitas en un solo lugar: desde cursos y oportunidades laborales hasta una red de profesionales dispuestos a ayudarte.</p>
+          <div class="headerButtons">
+            <a href="#aboutUs" class="headerButton">¡Más Información!</a>
+            <a href="{{ site.whatsapp }}" class="headerButton" target="_blank">¡Únete Ahora!</a>
+            <div class="buttonDecorator">
+              <img src="/img/wpp.webp" alt="">
+
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section id="comunidad" class="min-h-screen flex flex-col items-center pt-20 py-16 px-4 text-white">
-    <div class="mx-auto max-w-screen-xl text-center mb-16">
-      <h3 class="text-3xl font-semibold mb-4">Lo que hemos logrado juntos</h3>
-      <p class="text-white mb-8">Nuestra comunidad está en constante crecimiento. Aquí te mostramos algunas de las cosas que puedes encontrar</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <div class="bg-[#94403c] p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <i class="fas fa-users text-white text-4xl"></i>
-          <h4 class="text-2xl font-semibold text-white mt-4">+300</h4>
-          <p class="text-white mt-2">Miembros en la comunidad</p>
-        </div>
-        <div class="bg-[#94403c] p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <i class="fas fa-briefcase text-white text-4xl"></i>
-          <h4 class="text-2xl font-semibold text-white mt-4">Empleo</h4>
-          <p class="text-white mt-2">Publicamos constantemente ofertas para cualquier seniority</p>
-        </div>
-        <div class="bg-[#94403c] p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <i class="fas fa-chalkboard-teacher text-white text-4xl"></i>
-          <h4 class="text-2xl font-semibold text-white mt-4">Cursos</h4>
-          <p class="text-white mt-2">Compartimos información sobre cursos, talleres y más para que puedas seguir sumando conocimiento</p>
-        </div>
-        <div class="bg-[#94403c] p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <i class="fas fa-calendar-alt text-white text-4xl"></i>
-          <h4 class="text-2xl font-semibold text-white mt-4">Eventos</h4>
-          <p class="text-white mt-2">Realizamos eventos y juntadas para que te puedas sumar y hacer networking</p>
+      <div class="col-6 headerRight">
+        <div class="d-flex">
+          <img src="/img/code.webp" alt="" class="imageReference">
+          <img src="/img/code.webp" alt="" class="imageReferenceTwo">
+
         </div>
       </div>
+      <div class="col-12" style="height: 0vh; overflow: visible;">
+        <div style="position:relative;top:0;left: 0; filter: blur(5vh) ;width: 200vh; height: 200vh; background: radial-gradient(closest-side,rgba(255, 0, 0, 0.178) ,transparent); transform: translate(-50vw,-200vh); pointer-events: none; z-index: 1;"></div>
+        <div style="position:relative;top:0;left: 0; filter: blur(5vh) ;width: 400vh; height: 400vh; background: radial-gradient(closest-side,rgba(255, 0, 0, 0.171) ,transparent); transform: translate(-10vw,-350vh); pointer-events: none; z-index: 1;"></div>
+
+      </div>
     </div>
-    <div class="text-center mt-12">
-      <p class="text-white text-2xl mb-4">¿Listo para ser parte de este crecimiento? Conecta con otros profesionales, aprende y crece.</p>
+  </header>
+
+  <main>
+    <section id="aboutUs">
+      <h1>¡Revisa <b>nuestros</b> logros!</h1>
+      <p>Como comunidad, nos sentimos orgullosos de todos nuestros logros y de cada uno de nuestros miembros. Por eso, aquí te dejamos un listado de todo lo que hemos logrado juntos.</p>
+      <div class="row">
+        <div class="col-3">
+          <div class="featureCard">
+            <div class="featureCardContainer">
+              <div class="featureCardHeader">
+                <div class="iconContainer">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+                <a href="{{ site.whatsapp }}" target="_blank" class="headerButton">Únete ahora</a>
+              </div>
+
+              <h1>+300</h1>
+              <p>Más de 300 miembros activos en nuestra hermosa comunidad</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="featureCard">
+            <div class="featureCardContainer">
+              <div class="featureCardHeader">
+                <div class="iconContainer">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <!-- <a href="/jobs" class="headerButton">Ver ofertas</a> -->
+              </div>
+
+              <h1>Empleo</h1>
+              <p>Consigue el empleo que deseas y demuestra tu talento</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="featureCard">
+            <div class="featureCardContainer">
+              <div class="featureCardHeader">
+                <div class="iconContainer">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <!-- <a href="/courses" class="headerButton">Explorar catálogo</a> -->
+              </div>
+
+              <h1>Cursos</h1>
+              <p>Tenemos un extenso catálogo de cursos para ti</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="featureCard">
+            <div class="featureCardContainer">
+              <div class="featureCardHeader">
+                <div class="iconContainer">
+                  <i class="fa-solid fa-calendar"></i>
+                </div>
+                <!-- <a href="/events" class="headerButton">Ver eventos</a> -->
+              </div>
+
+              <h1>Eventos</h1>
+              <p>Realizamos eventos comunitarios de acceso público y gratuito</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <h1 class="text-center">¿Listo para ser parte de este crecimiento?</h1>
+      <p class="text-center" style="width: 100%;">Conecta con otros profesionales, aprende y crece.</p>
+      <div class="row socialIcons">
+        <div class="col-3">
+
+          <a href="{{site.whatsapp}}" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+              <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path>
+              <path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path>
+              <path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path>
+              <path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path>
+              <path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+            </svg>
+            Whatsapp
+
+          </a>
+        </div>
+        <div class="col-3">
+          <a href="{{ site.discord }}" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+              <path fill="#8c9eff" d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"></path>
+            </svg>
+            Discord
+          </a>
+        </div>
+        <div class="col-3">
+          <a href="{{ site.linkedin }}" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+              <path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path>
+              <path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
+            </svg>
+            Linkedin
+          </a>
+        </div>
+        <div class="col-3">
+          <a href="{{ site.github }}" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+              <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+            </svg>
+            Github
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <div class="partnersSection">
+      <div class="leftSection">
+        <a href="/">
+          <img src="/img/logo-text.webp" alt="">
+        </a>
+        <p>Conectamos a la comunidad IT de Salta. Un espacio para aprender, compartir y crecer en tecnología.</p>
+
+      </div>
+      <div class="rightSide">
+        <h3>Patrocinadores</h3>
+        <a href="https://cloudycoding.com" target="_blank">
+          <img src="/img/cloudy.webp" alt="">
+        </a>
+      </div>
+
     </div>
-    <div class="mt-8 flex gap-6 flex-wrap justify-center">
-      <a href="https://chat.whatsapp.com/Kxy7Kl87lWf0Ta1rhKdoE3" target="_blank" class="bg-[#25D366] text-white py-3 px-6 rounded-full text-lg flex items-center mb-4">
-        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-      </a>
-      <a href="https://discord.com/invite/cYseMwpvJh" target="_blank" class="bg-[#7289DA] text-white py-3 px-6 rounded-full text-lg flex items-center mb-4">
-        <i class="fab fa-discord mr-2"></i> Discord
-      </a>
-      <a href="https://www.linkedin.com/company/105152506/" target="_blank" class="bg-[#0077B5] text-white py-3 px-6 rounded-full text-lg flex items-center mb-4">
-        <i class="fab fa-linkedin mr-2"></i> LinkedIn
-      </a>
-      <a href="https://github.com/Salta-Dev/" target="_blank" class="bg-[#333] text-white py-3 px-6 rounded-full text-lg flex items-center mb-4">
-        <i class="fab fa-github mr-2"></i> GitHub
-      </a>
-    </div>
-  </section>
-  
-  
-  
-  <footer class="p-4 bg-[#181010] md:p-8 lg:p-10">
-    <div class="mx-auto max-w-screen-xl text-center">
-      <a href="#" class="flex justify-center items-center text-2xl font-semibold text-white"><img src="./imgs/logo2.png" class="h-8" alt="SaltaDev Logo"></a>
-      <p class="my-6 text-gray-400">Conectamos a la comunidad IT de Salta. Un espacio para aprender, compartir y crecer en tecnología.</p><span class="text-sm text-gray-400">© 2025 <a href="#" class="hover:underline">SaltaDev</a> - Todos los derechos reservados</span>
-    </div>
+    <p>© 2025 SaltaDev - Todos los derechos reservados - Website hecho con ❤️ por <a href="https://www.linkedin.com/in/emanuel250/" target="_blank">Emanuel Guzman</a> </p>
   </footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Manejo del menú hamburguesa
-      const menuButton = document.querySelector('[data-collapse-toggle="navbar-cta"]');
-      const navbar = document.getElementById('navbar-cta');
 
-      menuButton.addEventListener('click', () => {
-        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', !isExpanded);
-        navbar.classList.toggle('hidden');
-      });
+  {% include postimports.html %}
 
-      // Desplazamiento suave
-      const links = document.querySelectorAll("nav a");
-      links.forEach(link => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href").substring(1);
-          const targetElement = document.getElementById(targetId);
-          window.scrollTo({
-            top: targetElement.offsetTop - 60,
-            behavior: "smooth"
-          });
-
-          // Cerrar el menú en dispositivos móviles al hacer clic en un enlace
-          if (navbar.classList.contains('hidden') === false) {
-            navbar.classList.add('hidden');
-          }
-        });
-      });
-    });
-  </script> 
 </body>
+
 </html>

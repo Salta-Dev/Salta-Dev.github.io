@@ -1,0 +1,314 @@
+header,
+header .row,
+header .col-6 {
+  height: 100vh;
+}
+
+header .row {
+  padding: 1vh 7vw;
+}
+
+header .col-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.849), rgb(0, 0, 0)),
+    url('/img/headerBG.webp');
+  background-position: center center;
+  background-size: cover;
+}
+
+header span {
+  color: var(--primaryColor);
+  font-weight: bolder;
+}
+
+header h1,
+header h2 {
+  font-size: 7vh;
+}
+
+header p {
+  font-size: 2vh;
+  margin-top: 2vh;
+  opacity: 0.7;
+  text-shadow: black 1vh 1vh 1vh;
+}
+
+header .headerButtons {
+  margin-top: 4vh;
+  display: flex;
+}
+
+.headerButton {
+  color: white;
+  text-decoration: none;
+  border: 0.1vh solid var(--primaryColor);
+  padding: 1vh 1vw;
+  border-radius: 1vh;
+  margin-right: 1vw;
+  transition-duration: 0.3s;
+  display: block;
+  font-size: 1.9vh;
+
+}
+
+.headerButton:hover {
+  background-color: var(--primaryColor);
+}
+
+header a:hover {
+  rotate: -1.5deg;
+  translate: 0vh -1vh;
+}
+
+header .imageReference {
+  width: 55vw;
+  filter: brightness(0.7);
+  transform: translateX(35vw)translateY(3vh);
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+
+header .imageReferenceTwo {
+  width: 55vw;
+  filter: brightness(0.7);
+  transform: translateX(-10vw)translateY(-3vh);
+  z-index: 0;
+  transition-duration: 0.3s;
+}
+
+header .imageReference:hover {
+  transform: translateX(35vw)translateY(1vh);
+}
+
+header .imageReferenceTwo:hover {
+  transform: translateX(-10vw)translateY(-5vh);
+}
+
+header .headerButtons .buttonDecorator {
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+header .headerButtons .buttonDecorator img {
+  filter: invert();
+  opacity: 0.7;
+  height: 50vh;
+  transform: translateY(-16vh) translateX(-6vw);
+  pointer-events: none;
+}
+
+
+
+#aboutUs {
+  padding: 15vh 7vw;
+  color: white;
+  background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/img/featureBG.webp);
+  background-position: center center;
+  background-size: cover;
+}
+
+#aboutUs .row {
+  margin-bottom: 10vh;
+}
+
+#aboutUs h2 {
+  font-size: 2vh;
+  text-align: center;
+}
+
+
+#aboutUs h1 {
+  font-size: 5vh;
+}
+
+#aboutUs p {
+  width: 50%;
+  margin-bottom: 8vh;
+  margin-top: 2vh;
+  opacity: 0.7;
+  font-size: 2vh;
+}
+
+#aboutUs .featureCard {
+  padding: 5vh 2vw;
+  border: 0.1vh solid var(--primaryColor);
+  border-radius: 1vh 0vh 1vh 0vh;
+  background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), black);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  transition-duration: 0.3s;
+  min-height: 35vh;
+}
+
+#aboutUs .featureCardContainer {
+  width: 100%;
+
+}
+
+
+
+#aboutUs .iconContainer {
+  width: fit-content;
+  font-size: 3vh;
+  background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), rgba(255, 0, 0, 0.192));
+  color: var(--primaryColor);
+  padding: 0.5vh 1vh;
+  border-radius: 1vh;
+}
+
+#aboutUs .iconContainer i {
+  opacity: 0.3;
+  transition-duration: 0.3s;
+}
+
+#aboutUs .featureCard h1 {
+  font-size: 3vh;
+}
+
+#aboutUs .featureCard p {
+  font-size: 2vh;
+  width: 100%;
+  margin: 0;
+}
+
+
+#aboutUs .featureCard:hover {
+  box-shadow: rgba(255, 0, 0, 0.192) 0px 0px 1vh;
+  transform: translateY(-2vh) rotate(-2deg);
+}
+
+#aboutUs .featureCard:hover .iconContainer i {
+  opacity: 1;
+}
+
+#aboutUs .featureCardHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 2vh;
+
+}
+
+#aboutUs .headerButton {
+  margin-left: 1vh;
+}
+
+#aboutUs .socialIcons a {
+  font-family: "Railey";
+  color: white;
+  text-decoration: none;
+  font-size: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+  text-decoration: dashed;
+}
+
+
+
+#aboutUs .socialIcons a svg {
+  margin-right: 1vw;
+  background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), rgba(255, 0, 0, 0.192));
+  border-radius: 100%;
+  padding: 2vh;
+  border: 0.1vh solid var(--primaryColor);
+  box-shadow: rgba(255, 0, 0, 0.192) 0px 0px 1vh;
+  transition-duration: 0.66s;
+  width: 10vh;
+  height: auto;
+}
+
+#aboutUs .socialIcons a:hover {
+  color: var(--primaryColor);
+}
+
+#aboutUs .socialIcons a:hover svg {
+  transform: rotateY(360deg) translateY(-3vh);
+
+}
+
+@media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
+
+  header .col-6 {
+    width: 100%;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 5vh;
+  }
+
+  header p {
+    font-size: 2vh;
+  }
+
+
+  header .headerButtons {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  header .headerButton {
+    width: 100%;
+    margin: 0vh 2vw;
+  }
+
+  header .headerButtons .buttonDecorator img {
+    filter: invert();
+    opacity: 0.7;
+    height: 40vh;
+    transform: translateY(17vh) translateX(-40vw);
+    rotate: 35deg;
+  }
+
+  #aboutUs .col-3 {
+    width: 50%;
+    margin-bottom: 4vh;
+  }
+
+  #aboutUs {
+    text-align: center;
+  }
+
+  #aboutUs p {
+    width: 100%;
+  }
+
+  #aboutUs .featureCardHeader {
+    display: inline-block;
+  }
+
+  #aboutUs .iconContainer {
+    display: inline-block;
+    margin-bottom: 2vh;
+    font-size: 5vh;
+  }
+
+  #aboutUs .featureCard {
+    min-height: 40vh;
+    height: max-content;
+  }
+
+  #aboutUs .featureCardContainer p {
+    font-size: 1.5vh !important;
+  }
+
+  #aboutUs .col-3 {
+    width: 50%;
+  }
+
+  #aboutUs .socialIcons a svg {
+    margin-right: 5vw;
+  }
+}
