@@ -1,0 +1,183 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaltaDev - Comunidad de Desarrolladores</title>
+  {% include preimports.html %}
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/events.css">
+</head>
+
+<body>
+
+  {% include nav.html %}
+
+  {% include globalDecorator.html %}
+
+  {% assign sorted_events = site.events | sort: "path" | reverse %}
+  {% assign latest_event = sorted_events.first %}
+
+  <!-- <h2>
+    {{ latest_event.title }}
+  </h2>
+  <p>
+    {{ latest_event.content }}
+  </p> -->
+
+
+  <header>
+    <div class="row">
+      <div class="col-12" style="position: relative; z-index: 10; display: flex; justify-content: center; align-items: center; height: 100%;">
+        <div>
+          <h1>EL <b>PRÓXIMO</b> EVENTO <b>COMIENZA</b> EN</h1>
+
+          <section class="wrapper">
+            <section id="countdown-container" class="countdown-container">
+              <article id="js-countdown" class="countdown">
+                <section id="js-days" class="number"></section>
+                <section id="js-separator" class="separator">:</section>
+                <section id="js-hours" class="number"></section>
+                <section id="js-separator" class="separator">:</section>
+                <section id="js-minutes" class="number"></section>
+                <section id="js-separator" class="separator">:</section>
+                <section id="js-seconds" class="number"></section>
+              </article>
+            </section>
+          </section>
+
+          <div class="headerButtons">
+            <!-- <a href="#aboutUs" class="headerButton">¡Más Información!</a> -->
+            <a href="{{ lastest_event.link }}" class="headerButton" target="_blank">¡Únete Ahora!</a>
+
+          </div>
+        </div>
+      </div>
+
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          var targetDate = new Date(Date.UTC(2025, 3, 1));
+          var now = new Date();
+
+          window.days = daysBetween(now, targetDate);
+          var secondsLeft = secondsDifference(now, targetDate);
+          window.hours = Math.floor(secondsLeft / 60 / 60);
+          secondsLeft -= window.hours * 60 * 60;
+          window.minutes = Math.floor(secondsLeft / 60);
+          secondsLeft -= window.minutes * 60;
+          window.seconds = Math.floor(secondsLeft);
+
+          startCountdown();
+        });
+
+        var interval;
+
+        function daysBetween(date1, date2) {
+          var one_day = 1000 * 60 * 60 * 24;
+          return Math.round((date2.getTime() - date1.getTime()) / one_day);
+        }
+
+        function secondsDifference(date1, date2) {
+          var one_day = 1000 * 60 * 60 * 24;
+          var difference_ms = date2.getTime() - date1.getTime();
+          var difference = difference_ms / one_day;
+          var offset = difference - Math.floor(difference);
+          return offset * (60 * 60 * 24);
+        }
+
+        function startCountdown() {
+          // document.getElementById('input-container').style.display = 'none';
+          document.getElementById('countdown-container').style.display = 'block';
+
+          displayValue('#js-days', window.days);
+          displayValue('#js-hours', window.hours);
+          displayValue('#js-minutes', window.minutes);
+          displayValue('#js-seconds', window.seconds);
+
+          interval = setInterval(function() {
+            if (window.seconds > 0) {
+              window.seconds--;
+              displayValue('#js-seconds', window.seconds);
+            } else {
+              if (window.minutes > 0) {
+                window.minutes--;
+                window.seconds = 59;
+                updateValues('minutes');
+              } else {
+                if (window.hours > 0) {
+                  window.hours--;
+                  window.minutes = 59;
+                  window.seconds = 59;
+                  updateValues('hours');
+                } else {
+                  window.days--;
+                  window.hours = 23;
+                  window.minutes = 59;
+                  window.seconds = 59;
+                  updateValues('days');
+                }
+              }
+            }
+          }, 1000);
+        }
+
+        function updateValues(context) {
+          if (context === 'days') {
+            displayValue('#js-days', window.days);
+            displayValue('#js-hours', window.hours);
+            displayValue('#js-minutes', window.minutes);
+            displayValue('#js-seconds', window.seconds);
+          } else if (context === 'hours') {
+            displayValue('#js-hours', window.hours);
+            displayValue('#js-minutes', window.minutes);
+            displayValue('#js-seconds', window.seconds);
+          } else if (context === 'minutes') {
+            displayValue('#js-minutes', window.minutes);
+            displayValue('#js-seconds', window.seconds);
+          }
+        }
+
+        function displayValue(target, value) {
+          var element = document.querySelector(target);
+          if (!element) return;
+          var newDigit = document.createElement('span');
+          newDigit.textContent = pad(value);
+          newDigit.classList.add('new');
+          element.prepend(newDigit);
+          var current = element.querySelector('.current');
+          if (current) current.classList.add('old');
+          setTimeout(function() {
+            var oldElement = element.querySelector('.old');
+            if (oldElement) oldElement.remove();
+            newDigit.classList.add('current');
+            newDigit.classList.remove('new');
+          }, 900);
+        }
+
+        function pad(number) {
+          return ("0" + number).slice(-2);
+        }
+      </script>
+
+
+      <div class="col-12" style="height: 0vh; overflow: visible;">
+        <div style="position:relative;top:0;left: 0; filter: blur(5vh) ;width: 200vh; height: 200vh; background: radial-gradient(closest-side,rgba(255, 0, 0, 0.178) ,transparent); transform: translate(-50vw,-200vh); pointer-events: none; z-index: 1;"></div>
+        <div style="position:relative;top:0;left: 0; filter: blur(5vh) ;width: 400vh; height: 400vh; background: radial-gradient(closest-side,rgba(255, 0, 0, 0.171) ,transparent); transform: translate(-10vw,-350vh); pointer-events: none; z-index: 1;"></div>
+
+      </div>
+    </div>
+  </header>
+
+
+
+  {% include footer.html %}
+
+  {% include postimports.html %}
+
+</body>
+
+</html>

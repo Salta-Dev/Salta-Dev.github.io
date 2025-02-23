@@ -238,7 +238,8 @@ header .headerButtons .buttonDecorator img {
 
 }
 
-@media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
+@media (max-width: 1024px),
+(max-aspect-ratio: 13/9) {
 
   header .col-6 {
     width: 100%;
