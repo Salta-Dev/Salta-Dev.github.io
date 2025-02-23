@@ -95,7 +95,8 @@ nav #navToggle i {
   background-color: black !important;
 }
 
-@media (max-width: 1024px) and (max-aspect-ratio: 13/9) {
+@media (max-width: 1024px),
+(max-aspect-ratio: 13/9) {
   nav .rightSide {
     position: fixed;
     width: 100vw;
