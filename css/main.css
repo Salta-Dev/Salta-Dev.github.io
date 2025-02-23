@@ -108,7 +108,7 @@ header .headerButtons .buttonDecorator img {
 
 
 #aboutUs {
-  padding: 15vh 7vw;
+  padding: 15vh 7vw 5vh 7vw;
   color: white;
   background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/img/featureBG.webp);
   background-position: center center;
@@ -235,8 +235,8 @@ header .headerButtons .buttonDecorator img {
   border: 0.1vh solid var(--primaryColor);
   box-shadow: rgba(255, 0, 0, 0.192) 0px 0px 1vh;
   transition-duration: 0.66s;
-  width: 10vh;
-  height: auto;
+  width: 5vw;
+  height: max-content;
 }
 
 #aboutUs .socialIcons a:hover {
@@ -245,7 +245,103 @@ header .headerButtons .buttonDecorator img {
 
 #aboutUs .socialIcons a:hover svg {
   transform: rotateY(360deg) translateY(-0.5vh);
+}
 
+#events {
+  padding: 1vh 7vw;
+  color: white;
+}
+
+#events .buttonsCol {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+#events .buttonsCol .headerButtons a {
+  width: fit-content;
+}
+
+
+#events .eventCard {
+  min-height: 10vh;
+}
+
+#events .eventCard .eventCardHeader {
+  height: 30vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-left: 0.1vh solid var(--primaryColor);
+  border-right: 0.1vh solid var(--primaryColor);
+  border-top: 0.1vh solid var(--primaryColor);
+  border-radius: 1vh 1vh 0vh 0vh;
+  overflow: hidden;
+}
+
+#events .eventCard .eventCardHeader .row {
+  height: 100%;
+}
+
+#events .eventCard .eventCardHeader .col-6 {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+#events .eventCard .eventCardHeader p {
+  background-color: black;
+  font-size: 1.75vh;
+  padding: 0.5vh 1vw;
+  border-radius: 0vh 1vh 0vh 0vh;
+  width: fit-content;
+  margin-bottom: 0px;
+  font-weight: bolder;
+  color: rgba(255, 255, 255, 0.479);
+}
+
+#events .eventCard .eventCardHeader i {
+  color: white;
+  margin-right: 1vh;
+}
+
+#events .eventContainer {
+  padding: 1vh 1vw;
+}
+
+#events .eventCardBody {
+  border-left: 0.1vh solid var(--primaryColor);
+  border-right: 0.1vh solid var(--primaryColor);
+  border-bottom: 0.1vh solid var(--primaryColor);
+  border-radius: 0vh 0vh 1vh 1vh;
+  min-height: 45vh;
+  padding: 3vh 2vw;
+}
+
+#events .eventCardBody .eventTitle {
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+#events .eventCardBody .eventDescription {
+  font-size: 2vh;
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+#events .eventCardBody .headerButtons {
+  margin: 4vh 0vh 1vh 0vh;
+  text-align: center;
+}
+
+#events h1 {
+  font-size: 5vh;
+}
+
+#events .col-8,
+#events .col-4 {
+  margin-bottom: 7vh;
 }
 
 @media (max-width: 1024px),
@@ -324,5 +420,17 @@ header .headerButtons .buttonDecorator img {
     height: 10vh !important;
     width: 10vh !important;
 
+  }
+
+  #events .col-8,
+  #events .col-4 {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+  }
+
+  #events .eventCardBody {
+    padding: 3vh 10vw;
   }
 }

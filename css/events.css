@@ -105,6 +105,16 @@ header h1 {
 
 }
 
+header h2 {
+  font-size: 2.5vh;
+  margin-top: 3vh;
+}
+
+header p {
+  text-align: center;
+  font-size: 1.75vh;
+}
+
 header {
   text-align: center;
 }
@@ -116,6 +126,37 @@ header .headerButtons {
 
 header b {
   color: var(--primaryColor);
+}
+
+
+header .col-6 {
+  height: auto;
+}
+
+header .subRow {
+  height: auto;
+  text-align: left;
+}
+
+header .subRow p {
+  text-align: left;
+}
+
+header .subRow .col-6 {
+  height: auto;
+}
+
+header .subRow .headerButtons {
+  height: 100%;
+  margin-top: 0px;
+}
+
+header .mainContent {
+  transform: translateY(5vh);
+}
+
+#events {
+  padding-top: 20vh;
 }
 
 @keyframes hide-countdown {
@@ -182,5 +223,26 @@ header b {
   #js-minutes:after,
   #js-seconds:after {
     font-size: 1.5vh !important;
+  }
+
+  header .subRow .col-4,
+  header .subRow .col-8 {
+    width: 100%;
+    text-align: center;
+  }
+
+  header .subRow .col-8 p {
+    text-align: center;
+  }
+
+  header .subRow .col-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header .subRow .col-4 .headerButtons {
+    width: auto;
+    margin-top: 2vh;
   }
 }

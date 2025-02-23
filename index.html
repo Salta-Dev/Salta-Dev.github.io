@@ -13,6 +13,9 @@
 
 <body>
 
+  {% assign sorted_events = site.events | sort: "path" | reverse %}
+  {% assign latest_events = sorted_events | slice: 0, 3 %}
+
   {% include nav.html %}
 
   <!-- {% include globalDecorator.html %} -->
@@ -111,7 +114,7 @@
                 <div class="iconContainer">
                   <i class="fa-solid fa-calendar"></i>
                 </div>
-                <!-- <a href="/events" class="headerButton">Ver eventos</a> -->
+                <a href="/events" class="headerButton">Ver eventos</a>
               </div>
 
               <h1>Eventos</h1>
@@ -171,6 +174,57 @@
       </div>
     </section>
 
+    <section id="events">
+      <div class="row">
+        <div class="col-8">
+          <h1>Disfruta de nuestros <b>eventos comunitarios</b></h1>
+        </div>
+        <div class="col-4 buttonsCol">
+          <div class="headerButtons">
+            <a href="/events" class="headerButton">¡Ver todos los eventos!</a>
+          </div>
+        </div>
+
+
+        {% for event in latest_events %}
+        <div class="col-4 eventContainer">
+          <div class="eventCard">
+            <div class="eventCardHeader" style="background-image: url({{event.photo}});">
+              <div class="row">
+                <div class="col-6" style=" justify-content: left;">
+                  <p><i class="fa-solid fa-calendar"></i> {{event.event_date_parsed}}</p>
+                </div>
+                <div class="col-6" style=" justify-content: right; ">
+                  <p style=" border-radius: 1vh 0vh  0vh  0vh;"> <i class="fa-solid fa-clock"></i>{{event.event_hours_parsed}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="eventCardBody">
+              <p class="eventTitle">{{event.title}}</p>
+              <p class="eventDescription">{{event.description}}</p>
+
+              <div class="headerButtons">
+                <a href="{{ event.link }}" class="headerButton" target="_blank">¡Únete Ahora!</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+      </div>
+
+
+
+
+
+      </div>
+    </section>
+
+    <script>
+
+    </script>
 
   </main>
 
