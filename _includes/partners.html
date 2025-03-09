@@ -1,0 +1,59 @@
+<section id="partners">
+  <div id="partnerCarousel" class="carousel slide" data-ride="carousel">
+
+
+
+    <div class="row">
+      <div class="col-9">
+        <h1>¡Más de
+          {{ site.confidents | size | minus: 1  }} empresas y proyectos <b>confían</b> en nosotros!
+        </h1>
+      </div>
+      <div class="col-3">
+        <a href="#contact" class="headerButton">¡Quiero ser parte!</a>
+      </div>
+    </div>
+
+    <div class="carousel-inner" id="carouselInner">
+
+    </div>
+
+  </div>
+
+  <script>
+    $('#partnerCarousel').carousel({
+      interval: 2500
+    })
+
+    const data = {{ site.confidents | jsonify}}
+
+    const carouselInner = document.getElementById("carouselInner")
+    const groups = Math.ceil(data.length / 4)
+
+
+    for (let i = 0; i < groups; i++) {
+
+      const groupInfo = data.slice(i * 4, (i + 1) * 4)
+      const carouselItem = document.createElement("div")
+      const carouselRow = document.createElement("div")
+      carouselItem.classList.add("carousel-item")
+      carouselRow.classList.add("row")
+      carouselItem.appendChild(carouselRow)
+      if (i == 0) carouselItem.classList.add("active")
+
+      groupInfo.forEach(confident => {
+        carouselRow.insertAdjacentHTML("beforeend", `
+          <div class="col-3">
+            <a href="${confident.customURL}" target="_blank">
+              <img src="${confident.icon}" alt="">
+              <p>${confident.name}</p>
+            </a>
+          </div>
+        `)
+      });
+
+      carouselInner.appendChild(carouselItem)
+
+    }
+  </script>
+</section>

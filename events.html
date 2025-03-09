@@ -1,0 +1,287 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaltaDev - Comunidad de Desarrolladores</title>
+  {% include preimports.html %}
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/events.css">
+</head>
+
+<body>
+
+  {% include nav.html %}
+
+  <!-- {% include globalDecorator.html %} -->
+
+  {% assign sorted_events = site.events | sort: "path" | reverse %}
+  {% assign latest_event = sorted_events.first %}
+
+
+
+  <div id="currentEventDate" style="display: none;">{{latest_event.event_start_date}}</div>
+
+  <header>
+    <div class="row">
+      <div class="col-12 mainContent" style="position: relative; z-index: 10; display: flex; justify-content: center; align-items: center; height: 100%;">
+        <div>
+          <h1 id="originalTitle">EL <b>PRÓXIMO</b> EVENTO COMIENZA EN</h1>
+          <div id="noEventTitle" style="display: none;">
+            <h1>NO HAY EVENTOS DISPONIBLES <b>ACTUALMENTE</b></h1>
+            <div class="row subRow">
+              <div class="col-8">
+                <h2>
+                  ¡No te preocupes! Pronto tendremos más eventos para ti.
+                </h2>
+                <p>
+                  Mientras tanto, te invitamos a explorar nuestros eventos pasados y a unirte a nuestra comunidad. Si tienes un evento en mente, no dudes en compartirlo con nosotros o en invitarnos a participar. Este es un espacio abierto para toda la comunidad, y todas las propuestas son bienvenidas.
+                </p>
+              </div>
+              <div class="col-4">
+                <div class="headerButtons">
+                  <a href="#contact" class="headerButton">¡Contáctanos!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="wrapper" id="wrapper">
+            <section id="countdown-container" class="countdown-container">
+              <article id="js-countdown" class="countdown">
+                <section id="js-days" class="number"></section>
+                <!-- <section id="js-separator" class="separator">:</section> -->
+                <section id="js-hours" class="number"></section>
+                <!-- <section id="js-separator" class="separator">:</section> -->
+                <section id="js-minutes" class="number"></section>
+                <!-- <section id="js-separator" class="separator">:</section> -->
+                <section id="js-seconds" class="number"></section>
+              </article>
+            </section>
+          </section>
+
+          <div class="row subRow" id="buttonsHead">
+            <div class="col-8">
+              <h2>
+                {{ latest_event.title }}
+              </h2>
+              <p>
+                {{ latest_event.description }}
+              </p>
+            </div>
+            <div class="col-4">
+              <div class="headerButtons">
+                <a href="{{ latest_event.link }}" class="headerButton" target="_blank">¡Únete Ahora!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="col-12" style="height: 0vh; overflow: visible;">
+        <div style="position:relative;top:0;left: 0; filter: blur(5vh) ;width: 200vh; height: 200vh; background: radial-gradient(closest-side,rgba(255, 0, 0, 0.178) ,transparent); transform: translate(-50vw,-200vh); pointer-events: none; z-index: 1;"></div>
+        <div style="position:relative;top:0;left: 0; filter: blur(5vh) ;width: 400vh; height: 400vh; background: radial-gradient(closest-side,rgba(255, 0, 0, 0.171) ,transparent); transform: translate(-10vw,-350vh); pointer-events: none; z-index: 1;"></div>
+
+      </div>
+    </div>
+
+  </header>
+
+
+  <section id="events">
+    <div class="row">
+      <div class="col-8">
+        <h1>Disfruta de nuestros <b>eventos comunitarios</b></h1>
+      </div>
+      <div class="col-4 buttonsCol">
+        <div class="headerButtons">
+          <a href="/events" class="headerButton">¡Ver todos los eventos!</a>
+        </div>
+      </div>
+
+
+      {% for event in sorted_events %}
+      <div class="col-4 eventContainer">
+        <div class="eventCard">
+          <div class="eventCardHeader" style="background-image: url({{event.photo}});">
+            <div class="row">
+              <div class="col-6" style=" justify-content: left;">
+                <p><i class="fa-solid fa-calendar"></i> {{event.event_date_parsed}}</p>
+              </div>
+              <div class="col-6" style=" justify-content: right; ">
+                <p style=" border-radius: 1vh 0vh  0vh  0vh;"> <i class="fa-solid fa-clock"></i>{{event.event_hours_parsed}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="eventCardBody">
+            <p class="eventTitle">{{event.title}}</p>
+            <p class="eventDescription">{{event.description}}</p>
+
+            <div class="headerButtons">
+              <a href="{{ event.link }}" class="headerButton" target="_blank">¡Únete Ahora!</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+
+
+
+
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const event_start_date = document.getElementById("currentEventDate")
+      const dateParts = event_start_date.textContent.split(":")
+      const dayParts = dateParts[0].split("_")
+      const hourParts = dateParts[1].split("_")
+
+
+
+      const templateString = `${dayParts[2]}-${dayParts[1]}-${dayParts[0]}T${hourParts[0]}:${hourParts[1]}:${hourParts[2]}-03:00`
+      var targetDate = new Date(templateString)
+
+
+
+
+      var now = new Date();
+
+      if (targetDate.getTime() < now.getTime()) {
+        const originalTitle = document.getElementById("originalTitle")
+        const wrapper = document.getElementById("wrapper")
+        const buttonsHead = document.getElementById("buttonsHead")
+        const noEvent = document.getElementById("noEventTitle")
+        originalTitle.style.display = "none"
+        wrapper.style.display = "none"
+        buttonsHead.style.display = "none"
+        noEvent.style.display = "inline-block"
+        return;
+      }
+
+      window.days = daysBetween(now, targetDate);
+      var secondsLeft = secondsDifference(now, targetDate);
+      window.hours = Math.floor(secondsLeft / 60 / 60);
+      secondsLeft -= window.hours * 60 * 60;
+      window.minutes = Math.floor(secondsLeft / 60);
+      secondsLeft -= window.minutes * 60;
+      window.seconds = Math.floor(secondsLeft);
+
+      startCountdown();
+    });
+
+    var interval;
+
+    function daysBetween(date1, date2) {
+      var one_day = 1000 * 60 * 60 * 24;
+      return Math.round((date2.getTime() - date1.getTime()) / one_day);
+    }
+
+    function secondsDifference(date1, date2) {
+      var one_day = 1000 * 60 * 60 * 24;
+      var difference_ms = date2.getTime() - date1.getTime();
+      var difference = difference_ms / one_day;
+      var offset = difference - Math.floor(difference);
+      return offset * (60 * 60 * 24);
+    }
+
+    function startCountdown() {
+      // document.getElementById('input-container').style.display = 'none';
+      document.getElementById('countdown-container').style.display = 'block';
+
+      displayValue('#js-days', window.days);
+      displayValue('#js-hours', window.hours);
+      displayValue('#js-minutes', window.minutes);
+      displayValue('#js-seconds', window.seconds);
+
+      interval = setInterval(function() {
+        if (window.seconds > 0) {
+          window.seconds--;
+          displayValue('#js-seconds', window.seconds);
+        } else {
+          if (window.minutes > 0) {
+            window.minutes--;
+            window.seconds = 59;
+            updateValues('minutes');
+          } else {
+            if (window.hours > 0) {
+              window.hours--;
+              window.minutes = 59;
+              window.seconds = 59;
+              updateValues('hours');
+            } else {
+              window.days--;
+              window.hours = 23;
+              window.minutes = 59;
+              window.seconds = 59;
+              updateValues('days');
+            }
+          }
+        }
+      }, 1000);
+    }
+
+    function updateValues(context) {
+      if (context === 'days') {
+        displayValue('#js-days', window.days);
+        displayValue('#js-hours', window.hours);
+        displayValue('#js-minutes', window.minutes);
+        displayValue('#js-seconds', window.seconds);
+      } else if (context === 'hours') {
+        displayValue('#js-hours', window.hours);
+        displayValue('#js-minutes', window.minutes);
+        displayValue('#js-seconds', window.seconds);
+      } else if (context === 'minutes') {
+        displayValue('#js-minutes', window.minutes);
+        displayValue('#js-seconds', window.seconds);
+      }
+    }
+
+    function displayValue(target, value) {
+      var element = document.querySelector(target);
+      if (!element) return;
+      var newDigit = document.createElement('span');
+      newDigit.textContent = pad(value);
+      newDigit.classList.add('new');
+      element.prepend(newDigit);
+      var current = element.querySelector('.current');
+      if (current) current.classList.add('old');
+      setTimeout(function() {
+        var oldElement = element.querySelector('.old');
+        if (oldElement) oldElement.remove();
+        const deletableElements = [...element.querySelectorAll('.current')];
+        deletableElements.forEach(element => {
+          element.remove()
+        })
+        newDigit.classList.add('current');
+        newDigit.classList.remove('new');
+      }, 900);
+    }
+
+    function pad(number) {
+      return ("0" + number).slice(-2);
+    }
+  </script>
+
+  {% include contact.html %}
+
+  {% include footer.html %}
+
+  {% include postimports.html %}
+
+</body>
+
+</html>
