@@ -203,20 +203,25 @@ header .headerButtons .buttonDecorator img {
   margin-left: 1vh;
 }
 
+
+#aboutUs .socialIcons {
+  padding-bottom: 5vh;
+}
+
 #aboutUs .socialIcons a {
   /* font-family: "Railey"; */
   color: white;
   text-decoration: none;
   font-size: 3vh;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   transition-duration: 0.3s;
   text-decoration: dashed;
   border: 0.1vh solid var(--primaryColor);
   background: linear-gradient(35deg, #4e373711, black);
 
-  padding: 1vh 3vw;
+  padding: 1vh 0vh;
   font-weight: bolder;
   border-radius: 1vh;
 }
@@ -228,7 +233,7 @@ header .headerButtons .buttonDecorator img {
 
 
 #aboutUs .socialIcons a svg {
-  margin-right: 1vw;
+
   background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), rgba(255, 0, 0, 0.192));
   border-radius: 100%;
   padding: 2vh;
@@ -237,6 +242,10 @@ header .headerButtons .buttonDecorator img {
   transition-duration: 0.66s;
   width: 5vw;
   height: max-content;
+}
+
+#aboutUs .socialIcons span {
+  margin-left: 1vw;
 }
 
 #aboutUs .socialIcons a:hover {
@@ -248,7 +257,8 @@ header .headerButtons .buttonDecorator img {
 }
 
 #events {
-  padding: 1vh 7vw;
+  padding: 20vh 7vw 1vh;
+  background-color: black;
   color: white;
 }
 
@@ -315,19 +325,21 @@ header .headerButtons .buttonDecorator img {
   border-right: 0.1vh solid var(--primaryColor);
   border-bottom: 0.1vh solid var(--primaryColor);
   border-radius: 0vh 0vh 1vh 1vh;
-  min-height: 45vh;
+  min-height: 50vh;
   padding: 3vh 2vw;
 }
 
 #events .eventCardBody .eventTitle {
   font-size: 2vh;
   font-weight: bold;
+  min-height: 3vw;
 }
 
 #events .eventCardBody .eventDescription {
   font-size: 2vh;
   font-weight: normal;
   opacity: 0.7;
+  min-height: 17vw;
 }
 
 #events .eventCardBody .headerButtons {
@@ -342,6 +354,59 @@ header .headerButtons .buttonDecorator img {
 #events .col-8,
 #events .col-4 {
   margin-bottom: 7vh;
+}
+
+#partners {
+  color: white;
+  text-align: center;
+  width: 100vw;
+}
+
+#partnerCarousel {
+  padding: 7vh 7vw 8vh 7vw;
+  background-color: black;
+
+}
+
+
+#partners h1 {
+  font-size: 3vh;
+  padding-bottom: 8vh;
+  text-align: left;
+}
+
+#partners p {
+  font-size: 2vh;
+  font-weight: bold;
+  color: white;
+  transition-duration: 0.3s;
+
+}
+
+#partners a {
+  text-decoration: none;
+  opacity: 0.7;
+  transition-duration: 0.3s;
+}
+
+#partners a:hover {
+  opacity: 1;
+}
+
+
+
+
+
+#partners img {
+  height: 5vh;
+  margin-bottom: 3vh;
+  filter: grayscale();
+  width: max-content;
+  max-width: 20vh;
+}
+
+#partners a:hover img {
+  filter: none;
 }
 
 @media (max-width: 1024px),
@@ -432,5 +497,15 @@ header .headerButtons .buttonDecorator img {
 
   #events .eventCardBody {
     padding: 3vh 10vw;
+  }
+
+  #partnerCarousel .col-3 {
+    width: 50%;
+    margin-bottom: 3vh;
+
+  }
+
+  #partnerCarousel .col-3 p {
+    display: none;
   }
 }
