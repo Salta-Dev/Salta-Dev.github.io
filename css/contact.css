@@ -59,3 +59,25 @@ textarea {
 #contact button:hover {
   background-color: var(--primaryColor);
 }
+
+
+@media (max-width: 1024px),
+(max-aspect-ratio: 13/9) {
+
+  #contact .col-6 {
+    width: 100%;
+  }
+
+  #contact {
+    text-align: center;
+  }
+
+  #contact form {
+    margin-top: 5vh;
+  }
+
+  #contact button {
+    width: 100%;
+    margin-top: 2vh;
+  }
+}
