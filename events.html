@@ -29,9 +29,27 @@
     <div class="row">
       <div class="col-12 mainContent" style="position: relative; z-index: 10; display: flex; justify-content: center; align-items: center; height: 100%;">
         <div>
-          <h1>EL <b>PRÓXIMO</b> EVENTO COMIENZA EN</h1>
+          <h1 id="originalTitle">EL <b>PRÓXIMO</b> EVENTO COMIENZA EN</h1>
+          <div id="noEventTitle" style="display: none;">
+            <h1>NO HAY EVENTOS DISPONIBLES <b>ACTUALMENTE</b></h1>
+            <div class="row subRow">
+              <div class="col-8">
+                <h2>
+                  ¡No te preocupes! Pronto tendremos más eventos para ti.
+                </h2>
+                <p>
+                  Mientras tanto, te invitamos a explorar nuestros eventos pasados y a unirte a nuestra comunidad. Si tienes un evento en mente, no dudes en compartirlo con nosotros o en invitarnos a participar. Este es un espacio abierto para toda la comunidad, y todas las propuestas son bienvenidas.
+                </p>
+              </div>
+              <div class="col-4">
+                <div class="headerButtons">
+                  <a href="#contact" class="headerButton">¡Contáctanos!</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <section class="wrapper">
+          <section class="wrapper" id="wrapper">
             <section id="countdown-container" class="countdown-container">
               <article id="js-countdown" class="countdown">
                 <section id="js-days" class="number"></section>
@@ -45,7 +63,7 @@
             </section>
           </section>
 
-          <div class="row subRow">
+          <div class="row subRow" id="buttonsHead">
             <div class="col-8">
               <h2>
                 {{ latest_event.title }}
@@ -141,6 +159,18 @@
 
 
       var now = new Date();
+
+      if (targetDate.getTime() < now.getTime()) {
+        const originalTitle = document.getElementById("originalTitle")
+        const wrapper = document.getElementById("wrapper")
+        const buttonsHead = document.getElementById("buttonsHead")
+        const noEvent = document.getElementById("noEventTitle")
+        originalTitle.style.display = "none"
+        wrapper.style.display = "none"
+        buttonsHead.style.display = "none"
+        noEvent.style.display = "inline-block"
+        return;
+      }
 
       window.days = daysBetween(now, targetDate);
       var secondsLeft = secondsDifference(now, targetDate);
@@ -246,6 +276,7 @@
     }
   </script>
 
+  {% include contact.html %}
 
   {% include footer.html %}
 
