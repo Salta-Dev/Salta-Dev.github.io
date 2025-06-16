@@ -40,11 +40,14 @@ plugins:
 include:
   - _events
   - _confidents
+  - _staff
 
 collections:
   events:
     output: false
   confidents:
+    output: false
+  staff:
     output: false
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,0 +1,56 @@
+<section id="staff" style="padding: 15vh 7vw 5vh 7vw; color: white; background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/img/featureBG.webp); background-position: center center; background-size: cover;">
+  <div class="row" style="margin-bottom: 2vh;">
+    <div class="col-12">
+      <h1 style="font-size: 5vh; text-align: left;"><b>Staff</b> de SaltaDev</h1>
+      <p style="width: 100%; margin-bottom: 3vh; margin-top: 2vh; opacity: 0.7; font-size: 2vh; text-align: left;">Conocé a quienes hacen posible la comunidad</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    {% for member in site.staff %}
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3" style="margin-bottom: 3vh;">
+        <div class="featureCard" style="padding: 3vh 2vw; border: 0.1vh solid var(--primaryColor); border-radius: 1vh 0vh 1vh 0vh; background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), black); display: flex; flex-direction: column; justify-content: center; align-items: center; transition-duration: 0.3s; min-height: 30vh; text-align: center; width: 100%;">
+          <div class="featureCardContainer" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            {% if member.photo %}
+              <div class="iconContainer" style="width: fit-content; font-size: 3vh; color: var(--primaryColor); margin-bottom: 2vh;">
+                <img src="{{ member.photo }}" alt="{{ member.name }}" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primaryColor);">
+              </div>
+            {% else %}
+              <div class="iconContainer" style="width: fit-content; font-size: 3vh; color: var(--primaryColor); margin-bottom: 2vh;">
+                <img src="/img/staff/default.jpg" alt="{{ member.name }}" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primaryColor);">
+              </div>
+            {% endif %}
+            
+            <h2 style="font-size: 2.2vh; color: white; margin-bottom: 1vh;">{{ member.name }}</h2>
+            
+            {% if member.role %}
+              <p style="color: var(--primaryColor); font-weight: bold; margin-bottom: 1vh; font-size: 1.6vh;">{{ member.role }}</p>
+            {% endif %}
+            
+            {% if member.description %}
+              <p style="color: white; opacity: 0.8; font-size: 1.4vh; margin-bottom: 2vh; line-height: 1.4; padding: 0 1vw;">{{ member.description }}</p>
+            {% endif %}
+            
+            <div class="socialLinks" style="display: flex; justify-content: center; gap: 1.5vh; margin-top: auto;">
+              {% if member.twitter %}
+                <a href="{{ member.twitter }}" target="_blank" title="Twitter" style="color: var(--primaryColor); font-size: 2.5vh; transition-duration: 0.3s;">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+              {% endif %}
+              {% if member.linkedin %}
+                <a href="{{ member.linkedin }}" target="_blank" title="LinkedIn" style="color: var(--primaryColor); font-size: 2.5vh; transition-duration: 0.3s;">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              {% endif %}
+              {% if member.github %}
+                <a href="{{ member.github }}" target="_blank" title="GitHub" style="color: var(--primaryColor); font-size: 2.5vh; transition-duration: 0.3s;">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
