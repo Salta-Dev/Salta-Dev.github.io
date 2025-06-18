@@ -6,10 +6,51 @@
     </div>
   </div>
   
+  <style>
+    .staff-card {
+      padding: 3vh 2vw;
+      border: 0.1vh solid var(--primaryColor);
+      border-radius: 1vh 0vh 1vh 0vh;
+      background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), black);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 40vh;
+      text-align: center;
+      width: 100%;
+      flex: 1;
+      transition: all 0.3s ease;
+    }
+    
+    .staff-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(139, 195, 74, 0.2);
+      border: 0.1vh solid var(--primaryColor);
+      background: linear-gradient(35deg, rgba(78, 55, 55, 0.15), rgba(0, 0, 0, 0.9));
+    }
+    
+    .staff-card:hover .staff-social a {
+      opacity: 1;
+    }
+    
+    .staff-social a {
+      color: var(--primaryColor);
+      font-size: 2.5vh;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+    
+    .staff-social a:hover {
+      transform: translateY(-3px);
+      color: white;
+    }
+  </style>
+  
   <div class="row">
     {% for member in site.staff %}
-      <div class="col-12 col-md-6 col-lg-4 col-xl-3" style="margin-bottom: 3vh;">
-        <div class="featureCard" style="padding: 3vh 2vw; border: 0.1vh solid var(--primaryColor); border-radius: 1vh 0vh 1vh 0vh; background: linear-gradient(35deg, rgba(78, 55, 55, 0.068), black); display: flex; flex-direction: column; justify-content: center; align-items: center; transition-duration: 0.3s; min-height: 30vh; text-align: center; width: 100%;">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3" style="margin-bottom: 3vh; display: flex;">
+        <div class="featureCard staff-card">
           <div class="featureCardContainer" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
             {% if member.photo %}
               <div class="iconContainer" style="width: fit-content; font-size: 3vh; color: var(--primaryColor); margin-bottom: 2vh;">
@@ -21,29 +62,29 @@
               </div>
             {% endif %}
             
-            <h2 style="font-size: 2.2vh; color: white; margin-bottom: 1vh;">{{ member.name }}</h2>
+            <h2 style="font-size: 2.5vh; color: white; margin-bottom: 1vh;">{{ member.name }}</h2>
             
             {% if member.role %}
               <p style="color: var(--primaryColor); font-weight: bold; margin-bottom: 1vh; font-size: 1.6vh;">{{ member.role }}</p>
             {% endif %}
             
             {% if member.description %}
-              <p style="color: white; opacity: 0.8; font-size: 1.4vh; margin-bottom: 2vh; line-height: 1.4; padding: 0 1vw;">{{ member.description }}</p>
+              <p style="color: white; opacity: 0.8; font-size: 1.7vh; margin-bottom: 1.5vh; line-height: 1.4; padding: 0 1vw; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">{{ member.description }}</p>
             {% endif %}
             
-            <div class="socialLinks" style="display: flex; justify-content: center; gap: 1.5vh; margin-top: auto;">
+            <div class="socialLinks staff-social" style="display: flex; justify-content: center; gap: 1.5vh;">
               {% if member.twitter %}
-                <a href="{{ member.twitter }}" target="_blank" title="Twitter" style="color: var(--primaryColor); font-size: 2.5vh; transition-duration: 0.3s;">
+                <a href="{{ member.twitter }}" target="_blank" title="Twitter">
                   <i class="fa-brands fa-x-twitter"></i>
                 </a>
               {% endif %}
               {% if member.linkedin %}
-                <a href="{{ member.linkedin }}" target="_blank" title="LinkedIn" style="color: var(--primaryColor); font-size: 2.5vh; transition-duration: 0.3s;">
+                <a href="{{ member.linkedin }}" target="_blank" title="LinkedIn">
                   <i class="fa-brands fa-linkedin"></i>
                 </a>
               {% endif %}
               {% if member.github %}
-                <a href="{{ member.github }}" target="_blank" title="GitHub" style="color: var(--primaryColor); font-size: 2.5vh; transition-duration: 0.3s;">
+                <a href="{{ member.github }}" target="_blank" title="GitHub">
                   <i class="fa-brands fa-github"></i>
                 </a>
               {% endif %}
