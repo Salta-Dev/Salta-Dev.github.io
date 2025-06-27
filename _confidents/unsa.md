@@ -1,5 +1,5 @@
 ---
 name: "Universidad Nacional de Salta"
 customURL: "https://www.unsa.edu.ar/"
-icon: "/img/unsa.webp"
+icon: "/img/unsa.avif"
 ---
