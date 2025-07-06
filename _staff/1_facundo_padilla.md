@@ -1,5 +1,6 @@
 ---
 name: "Facundo Padilla"
+role: "Fundador"
 description: "Software engineer en Santander Tecnología"
 photo: "img/staff/facundo_padilla.jpg"
 twitter: "https://x.com/facundopadilla_"
