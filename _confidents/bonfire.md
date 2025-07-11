@@ -1,5 +1,5 @@
 ---
-name: "Bonfire"
+name: "Bonfire Academy"
 customURL: "https://bonfire.academy/"
-icon: "/img/bonfire.webp"
+icon: "/img/bonfire.png"
 ---
