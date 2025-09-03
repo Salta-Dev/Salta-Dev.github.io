@@ -1,5 +1,5 @@
 ---
 name: "Salta Game Devs"
-customURL: "#"
+customURL: "https://game.salta.dev"
 icon: "/img/saltagamedevs.png"
 ---
