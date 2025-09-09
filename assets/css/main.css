@@ -18,7 +18,7 @@ header {
   color: white;
   overflow: hidden;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.849), rgb(0, 0, 0)),
-    url('/img/headerBG.webp');
+    url('/assets/img/backgrounds/headerBG.webp');
   background-position: center center;
   background-size: cover;
 }
@@ -31,6 +31,7 @@ header span {
 header h1,
 header h2 {
   font-size: 7vh;
+  font-weight: normal;
 }
 
 header p {
@@ -55,11 +56,17 @@ header .headerButtons {
   transition-duration: 0.3s;
   display: block;
   font-size: 1.9vh;
-
+  font-weight: normal;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .headerButton:hover {
   background-color: var(--primaryColor);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-color: var(--primaryColor);
 }
 
 header a:hover {
@@ -110,7 +117,7 @@ header .headerButtons .buttonDecorator img {
 #aboutUs {
   padding: 15vh 7vw 5vh 7vw;
   color: white;
-  background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/img/featureBG.webp);
+  background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/assets/img/backgrounds/featureBG.webp);
   background-position: center center;
   background-size: cover;
 }
@@ -127,6 +134,7 @@ header .headerButtons .buttonDecorator img {
 
 #aboutUs h1 {
   font-size: 5vh;
+  font-weight: bold;
 }
 
 #aboutUs p {
@@ -172,6 +180,7 @@ header .headerButtons .buttonDecorator img {
 
 #aboutUs .featureCard h1 {
   font-size: 3vh;
+  font-weight: bold;
 }
 
 #aboutUs .featureCard p {
@@ -209,7 +218,6 @@ header .headerButtons .buttonDecorator img {
 }
 
 #aboutUs .socialIcons a {
-  /* font-family: "Railey"; */
   color: white;
   text-decoration: none;
   font-size: 3vh;
@@ -349,6 +357,7 @@ header .headerButtons .buttonDecorator img {
 
 #events h1 {
   font-size: 5vh;
+  font-weight: bold;
 }
 
 #events .col-8,
@@ -373,6 +382,7 @@ header .headerButtons .buttonDecorator img {
   font-size: 3vh;
   padding-bottom: 8vh;
   text-align: left;
+  font-weight: bold;
 }
 
 #partners p {

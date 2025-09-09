@@ -1,5 +1,5 @@
 ---
 name: "Eurekant"
 customURL: "https://eurekant.com/"
-icon: "/img/eurekant.png"
+icon: "/assets/img/partners/eurekant.png"
 ---

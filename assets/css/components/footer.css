@@ -1,6 +1,6 @@
 footer {
   padding: 3vh 7vw;
-  background: linear-gradient(360deg, rgba(14, 1, 1, 0.97), rgb(0, 0, 0)), url(/img/featureBG.webp);
+  background: linear-gradient(360deg, rgba(14, 1, 1, 0.97), rgb(0, 0, 0)), url(/assets/img/backgrounds/featureBG.webp);
 }
 
 footer a img {

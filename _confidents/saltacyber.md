@@ -1,5 +1,5 @@
 ---
 name: "Salta Cybersecurity Club"
 customURL: "https://saltacybersecurity.club/"
-icon: "/img/saltacyber.png"
+icon: "/assets/img/partners/saltacyber.png"
 ---

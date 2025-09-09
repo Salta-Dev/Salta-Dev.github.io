@@ -6,6 +6,7 @@
 
 #contact h1 {
   font-size: 6vh;
+  font-weight: bold;
 }
 
 #contact p {
@@ -53,11 +54,14 @@ textarea {
   font-size: 1.9vh;
   background-color: transparent;
   margin-top: 1vh;
-
+  font-weight: normal;
+  cursor: pointer;
 }
 
 #contact button:hover {
   background-color: var(--primaryColor);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 

@@ -1,15 +1,13 @@
 ---
+scripts: ['events']
 ---
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SaltaDev - Comunidad de Desarrolladores</title>
-  {% include preimports.html %}
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/events.css">
+  {% include head-imports.html %}
+  <link rel="stylesheet" href="/assets/css/pages/events.css">
 </head>
 
 <body>
@@ -18,7 +16,7 @@
 
   <!-- {% include globalDecorator.html %} -->
 
-  {% assign sorted_events = site.events | sort: "path" | reverse %}
+  {% assign sorted_events = site.events | sort: "date" | reverse %}
   {% assign latest_event = sorted_events.first %}
 
 
@@ -140,147 +138,13 @@
 
 
 
-    </div>
   </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const event_start_date = document.getElementById("currentEventDate")
-      const dateParts = event_start_date.textContent.split(":")
-      const dayParts = dateParts[0].split("_")
-      const hourParts = dateParts[1].split("_")
-
-
-
-      const templateString = `${dayParts[2]}-${dayParts[1]}-${dayParts[0]}T${hourParts[0]}:${hourParts[1]}:${hourParts[2]}-03:00`
-      var targetDate = new Date(templateString)
-
-
-
-
-      var now = new Date();
-
-      if (targetDate.getTime() < now.getTime()) {
-        const originalTitle = document.getElementById("originalTitle")
-        const wrapper = document.getElementById("wrapper")
-        const buttonsHead = document.getElementById("buttonsHead")
-        const noEvent = document.getElementById("noEventTitle")
-        originalTitle.style.display = "none"
-        wrapper.style.display = "none"
-        buttonsHead.style.display = "none"
-        noEvent.style.display = "inline-block"
-        return;
-      }
-
-      window.days = daysBetween(now, targetDate);
-      var secondsLeft = secondsDifference(now, targetDate);
-      window.hours = Math.floor(secondsLeft / 60 / 60);
-      secondsLeft -= window.hours * 60 * 60;
-      window.minutes = Math.floor(secondsLeft / 60);
-      secondsLeft -= window.minutes * 60;
-      window.seconds = Math.floor(secondsLeft);
-
-      startCountdown();
-    });
-
-    var interval;
-
-    function daysBetween(date1, date2) {
-      var one_day = 1000 * 60 * 60 * 24;
-      return Math.round((date2.getTime() - date1.getTime()) / one_day);
-    }
-
-    function secondsDifference(date1, date2) {
-      var one_day = 1000 * 60 * 60 * 24;
-      var difference_ms = date2.getTime() - date1.getTime();
-      var difference = difference_ms / one_day;
-      var offset = difference - Math.floor(difference);
-      return offset * (60 * 60 * 24);
-    }
-
-    function startCountdown() {
-      // document.getElementById('input-container').style.display = 'none';
-      document.getElementById('countdown-container').style.display = 'block';
-
-      displayValue('#js-days', window.days);
-      displayValue('#js-hours', window.hours);
-      displayValue('#js-minutes', window.minutes);
-      displayValue('#js-seconds', window.seconds);
-
-      interval = setInterval(function() {
-        if (window.seconds > 0) {
-          window.seconds--;
-          displayValue('#js-seconds', window.seconds);
-        } else {
-          if (window.minutes > 0) {
-            window.minutes--;
-            window.seconds = 59;
-            updateValues('minutes');
-          } else {
-            if (window.hours > 0) {
-              window.hours--;
-              window.minutes = 59;
-              window.seconds = 59;
-              updateValues('hours');
-            } else {
-              window.days--;
-              window.hours = 23;
-              window.minutes = 59;
-              window.seconds = 59;
-              updateValues('days');
-            }
-          }
-        }
-      }, 1000);
-    }
-
-    function updateValues(context) {
-      if (context === 'days') {
-        displayValue('#js-days', window.days);
-        displayValue('#js-hours', window.hours);
-        displayValue('#js-minutes', window.minutes);
-        displayValue('#js-seconds', window.seconds);
-      } else if (context === 'hours') {
-        displayValue('#js-hours', window.hours);
-        displayValue('#js-minutes', window.minutes);
-        displayValue('#js-seconds', window.seconds);
-      } else if (context === 'minutes') {
-        displayValue('#js-minutes', window.minutes);
-        displayValue('#js-seconds', window.seconds);
-      }
-    }
-
-    function displayValue(target, value) {
-      var element = document.querySelector(target);
-      if (!element) return;
-      var newDigit = document.createElement('span');
-      newDigit.textContent = pad(value);
-      newDigit.classList.add('new');
-      element.prepend(newDigit);
-      var current = element.querySelector('.current');
-      if (current) current.classList.add('old');
-      setTimeout(function() {
-        var oldElement = element.querySelector('.old');
-        if (oldElement) oldElement.remove();
-        const deletableElements = [...element.querySelectorAll('.current')];
-        deletableElements.forEach(element => {
-          element.remove()
-        })
-        newDigit.classList.add('current');
-        newDigit.classList.remove('new');
-      }, 900);
-    }
-
-    function pad(number) {
-      return ("0" + number).slice(-2);
-    }
-  </script>
 
   {% include contact.html %}
 
   {% include footer.html %}
 
-  {% include postimports.html %}
+  {% include scripts/body-scripts.html %}
 
 </body>
 

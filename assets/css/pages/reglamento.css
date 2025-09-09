@@ -1,7 +1,7 @@
 body {
   background-color: #000;
   color: white;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: "Poppins", 'Open Sans', Arial, sans-serif;
 }
 
 header {
@@ -9,7 +9,7 @@ header {
   min-height: 60vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/img/featureBG.webp);
+  background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/assets/img/backgrounds/featureBG.webp);
   background-position: center center;
   background-size: cover;
   padding: 10vh 0;
@@ -19,6 +19,7 @@ header h1 {
   font-size: 5vh;
   color: white;
   margin-bottom: 3vh;
+  font-weight: bold;
 }
 
 header h2 {
@@ -43,7 +44,7 @@ header p {
   background-color: #000;
   padding: 10vh 7vw;
   color: white;
-  background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/img/featureBG.webp);
+  background: linear-gradient(195deg, rgb(30 2 2 / 97%), rgb(0, 0, 0)), url(/assets/img/backgrounds/featureBG.webp);
   background-position: center center;
   background-size: cover;
 }
@@ -53,6 +54,7 @@ header p {
   color: white;
   margin-bottom: 6vh;
   text-align: center;
+  font-weight: bold;
 }
 
 .reglamentoSection {

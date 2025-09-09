@@ -1,5 +1,5 @@
 ---
 name: "Pragmore"
 customURL: "https://pragmore.com/"
-icon: "/img/pragmore.webp"
+icon: "/assets/img/partners/pragmore.webp"
 ---
