@@ -1,5 +1,5 @@
 ---
 name: "Nisuta"
 customURL: "https://tiendanisuta.com/"
-icon: "/img/nisuta.png"
+icon: "/assets/img/partners/nisuta.png"
 ---

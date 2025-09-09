@@ -1,5 +1,5 @@
 ---
 name: "Tasty Control"
 customURL: "https://tastycontrol.com/"
-icon: "/img/tasty.png"
+icon: "/assets/img/partners/tasty.png"
 ---

@@ -4,16 +4,13 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SaltaDev - Comunidad de Desarrolladores</title>
-  {% include preimports.html %}
-  <link rel="stylesheet" href="/css/main.css">
+  {% include head-imports.html %}
 </head>
 
 <body>
 
-  {% assign sorted_events = site.events | sort: "path" | reverse %}
+  {% assign sorted_events = site.events | sort: "date" | reverse %}
   {% assign latest_events = sorted_events | slice: 0, 3 %}
 
   {% include nav.html %}
@@ -28,7 +25,7 @@
             <a href="#aboutUs" class="headerButton">¡Más Información!</a>
             <a href="{{ site.whatsapp }}" class="headerButton" target="_blank">¡Únete Ahora!</a>
             <div class="buttonDecorator">
-              <img src="/img/wpp.webp" alt="">
+              <img src="/assets/img/icons/wpp.webp" alt="">
 
             </div>
           </div>
@@ -36,8 +33,8 @@
       </div>
       <div class="col-6 headerRight">
         <div class="d-flex">
-          <img src="/img/code.webp" alt="" class="imageReference">
-          <img src="/img/code.webp" alt="" class="imageReferenceTwo">
+          <img src="/assets/img/code.webp" alt="" class="imageReference">
+          <img src="/assets/img/code.webp" alt="" class="imageReferenceTwo">
 
         </div>
       </div>
@@ -68,8 +65,8 @@
           <a href="{{ site.whatsapp }}" target="_blank" class="headerButton">Únete ahora</a>
           </div>
 
-          <h1>+600</h1>
-          <p>Más de 600 miembros activos en nuestra hermosa comunidad</p>
+          <h1>+800</h1>
+          <p>Más de 800 miembros activos en nuestra hermosa comunidad</p>
         </div>
 
         </div>
@@ -235,7 +232,7 @@
 
   {% include footer.html %}
 
-  {% include postimports.html %}
+  {% include scripts/body-scripts.html %}
 
 </body>
 

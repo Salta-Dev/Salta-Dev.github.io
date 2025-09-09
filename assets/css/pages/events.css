@@ -6,7 +6,7 @@
 }
 
 .countdown-container {
-  font-family: Montserrat, sans-serif;
+  font-family: "Poppins", Montserrat, sans-serif;
   -webkit-font-smoothing: antialiased;
   width: 75vw !important;
   height: 100%;
@@ -102,7 +102,7 @@
 header h1 {
   font-size: 4vh;
   margin-bottom: 5vh;
-
+  font-weight: bold;
 }
 
 header h2 {
