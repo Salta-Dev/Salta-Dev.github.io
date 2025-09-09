@@ -217,13 +217,13 @@ bundle exec jekyll build
 
 ## 📞 Contacto
 
-- **Email**: comusaltadev@gmail.com
-- **Website**: [saltadev.org](https://saltadev.org)
-- **WhatsApp**: [Únete a la comunidad](https://linktr.ee/saltadev)
+- **Email**: contacto@salta.dev.ar
+- **Website**: [salta.dev.ar](https://salta.dev.ar)
+- **WhatsApp**: [Únete a la comunidad](https://salta.dev.ar)
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia GPL-3.0. Ver el archivo `LICENSE` para más detalles.
 
 ---
 
