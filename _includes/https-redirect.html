@@ -1,5 +1,3 @@
 <script>
-  if (location.protocol === 'http:') {
-    location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
-  }
+  location.replace('https://salta.dev' + location.pathname + location.search + location.hash);
 </script>
